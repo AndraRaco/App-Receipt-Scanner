@@ -11,12 +11,8 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 
@@ -24,6 +20,8 @@ import kotlinx.android.synthetic.main.fragment_first.*
 class MainActivity : AppCompatActivity() {
 
     private val PERMISSION_CODE = 1000;
+    private val PERMISSION_CODE_PICK = 1001;
+    private val IMAGE_PICK_CODE = 1000;
     private val IMAGE_CAPTURE_CODE = 1001
     var image_uri: Uri? = null
 
@@ -55,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                 openCamera()
             }
         }
+
         /*
         //gallery button click
         chose_from_gallery.setOnClickListener {
@@ -79,6 +78,8 @@ class MainActivity : AppCompatActivity() {
         }
 
          */
+
+
 
     }
 
@@ -119,8 +120,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
+    
     //GALLERY FUNCTIONS
+    /*
     private fun pickImageFromGallery() {
         //Intent to pick image
         val intent = Intent(Intent.ACTION_PICK)
@@ -128,16 +130,8 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
-    companion object {
-        //image pick code
-        private val IMAGE_PICK_CODE = 1000;
-        //Permission code
-        private val PERMISSION_CODE = 1001;
-    }
-
-
      */
-     */
+
 
     /*
     //handle requested permission result
@@ -168,6 +162,8 @@ class MainActivity : AppCompatActivity() {
 
      */
 
+     */
+
 
 
 
@@ -188,7 +184,7 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.reset -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
