@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "599922029462",
+    "firebase_url": "https://mds-receipt-scanner.firebaseio.com",
+    "project_id": "mds-receipt-scanner",
+    "storage_bucket": "mds-receipt-scanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599922029462:android:a82a5eaa6284c71d7623b7",
+        "android_client_info": {
+          "package_name": "com.kip.receiptscanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599922029462-4en6v6k3dli20finsa9j27slm7e2d3bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIveMqa0zcbr0iEGV8msxh-3j5GXwG8FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599922029462-4en6v6k3dli20finsa9j27slm7e2d3bb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

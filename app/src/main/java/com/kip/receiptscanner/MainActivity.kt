@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    
+
     //GALLERY FUNCTIONS
     /*
     private fun pickImageFromGallery() {
