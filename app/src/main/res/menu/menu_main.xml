@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.kip.receiptscanner.MainActivity">
     <item
+        android:id="@+id/remove_ads"
+        android:title="Go ad free" />
+    <item
         android:id="@+id/reset"
         android:orderInCategory="100"
         android:title="Reset"
