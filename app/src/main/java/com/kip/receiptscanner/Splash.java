@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class Splash extends AppCompatActivity {
+    LauncherManager launcherManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,17 @@ public class Splash extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
+        launcherManager = new LauncherManager(this);
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(),Slider.class));
+                if(launcherManager.isFirstTime()){
+                    launcherManager.setFirstLaunch(false);
+                    startActivity(new Intent(getApplicationContext(),Slider.class));
+                }
+                else startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         },2000);
 

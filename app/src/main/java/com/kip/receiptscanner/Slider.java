@@ -17,6 +17,7 @@ public class Slider extends AppCompatActivity {
     Button btnSkip;
     int[] layouts;
     Adapter adapter;
+    LauncherManager launcherManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class Slider extends AppCompatActivity {
                 }
                 else{
                     //go to main activity
+                    //launcherManager.setFirstLaunch(false);
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 }
             }
