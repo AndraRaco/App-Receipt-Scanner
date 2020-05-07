@@ -3,6 +3,7 @@ package com.kip.receiptscanner;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -39,6 +40,7 @@ public class Slider extends AppCompatActivity {
         adapter = new Adapter(this,layouts);
         viewPager.setAdapter(adapter);
 
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,9 +49,19 @@ public class Slider extends AppCompatActivity {
                 }
                 else{
                     //go to main activity
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 }
             }
         });
+
+        /*
+        btnSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+         */
 
         viewPager.addOnPageChangeListener(viewPagerChangeListener);
 
