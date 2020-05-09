@@ -37,4 +37,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ocr_scan" />
 
+    <Button
+        android:id="@+id/buttonChecklistActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="464dp"
+        android:text="@string/title_activity_checklist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/taken_photo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

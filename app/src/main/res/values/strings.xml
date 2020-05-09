@@ -16,4 +16,5 @@
     <string name="slide2m">We got you</string>
     <string name="slide3">Remember to save your information \nover the cloud with a simple login</string>
     <string name="slide3m">Sync</string>
+    <string name="title_activity_checklist">ChecklistActivity</string>
 </resources>
