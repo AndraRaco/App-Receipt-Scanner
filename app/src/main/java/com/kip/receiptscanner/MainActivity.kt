@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        //Side buttons activity
+
+
+
+
         //camera button click
         new_photo.setOnClickListener {
             //if system os is Marshmallow or Above, we need to request runtime permission
