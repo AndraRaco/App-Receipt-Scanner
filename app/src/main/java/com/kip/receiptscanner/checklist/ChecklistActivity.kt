@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kip.receiptscanner.R
 
 import kotlinx.android.synthetic.main.activity_checklist.*
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main_drawer.*
+import kotlinx.android.synthetic.main.app_bar_main_drawer.*
 
 class ChecklistActivity : AppCompatActivity() {
 

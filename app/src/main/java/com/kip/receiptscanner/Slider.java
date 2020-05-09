@@ -52,7 +52,7 @@ public class Slider extends AppCompatActivity {
                 else{
                     //go to main activity
                     //launcherManager.setFirstLaunch(false);
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),MainDrawer.class));
                 }
             }
         });
@@ -61,7 +61,7 @@ public class Slider extends AppCompatActivity {
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),MainDrawer.class));
             }
         });
 
