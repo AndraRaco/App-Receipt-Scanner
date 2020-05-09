@@ -14,12 +14,12 @@
     android:gravity="bottom">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round"
+        android:id="@+id/imageView"
+        android:layout_width="87dp"
+        android:layout_height="87dp"
         android:contentDescription="@string/nav_header_desc"
-        android:id="@+id/imageView" />
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:srcCompat="@drawable/avatar_m" />
 
     <TextView
         android:layout_width="match_parent"
