@@ -31,6 +31,7 @@ public class Slider extends AppCompatActivity {
 
         viewPager = findViewById(R.id.pager);
         btnNext = findViewById(R.id.nextbtn);
+        btnSkip = findViewById(R.id.skipbtn);
 
         layouts = new int[] {
                 R.layout.welcome_slider1,
@@ -56,14 +57,14 @@ public class Slider extends AppCompatActivity {
             }
         });
 
-        /*
+
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
-         */
+
 
         viewPager.addOnPageChangeListener(viewPagerChangeListener);
 
