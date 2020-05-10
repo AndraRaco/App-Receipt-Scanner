@@ -21,12 +21,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_activity_checklist"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="264dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

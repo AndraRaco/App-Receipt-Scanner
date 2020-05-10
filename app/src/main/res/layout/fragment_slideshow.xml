@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.slideshow.SlideshowFragment" >
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_checklist"
+        app:layout_constraintBottom_toTopOf="@+id/text_slideshow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/text_slideshow"
         android:layout_width="match_parent"
