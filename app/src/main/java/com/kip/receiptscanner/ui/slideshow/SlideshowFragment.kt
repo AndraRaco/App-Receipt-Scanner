@@ -17,6 +17,8 @@ class SlideshowFragment : Fragment() {
 
     private lateinit var slideshowViewModel: SlideshowViewModel
 
+    //THIS IS THE CHECKLIST FRAGMENT
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

@@ -14,6 +14,8 @@ class GalleryFragment : Fragment() {
 
     private lateinit var galleryViewModel: GalleryViewModel
 
+    //THIS IS THE OCR SCANNER FRAGMENT
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
