@@ -33,4 +33,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+
+
+    <string name="welcome_home">Welcome,\nplease select one of the app functions</string>
 </resources>

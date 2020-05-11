@@ -31,16 +31,4 @@ class SlideshowFragment : Fragment() {
         })
         return root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        button.setOnClickListener {
-            var intent = Intent(
-                view.context,
-                ChecklistActivity::class.java
-            )
-            startActivity(intent)
-        }
-    }
 }

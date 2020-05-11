@@ -10,9 +10,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.kip.receiptscanner.MainTextRecognizer
 import com.kip.receiptscanner.R
 import com.kip.receiptscanner.checklist.ChecklistActivity
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 class HomeFragment : Fragment() {
 
@@ -33,4 +35,25 @@ class HomeFragment : Fragment() {
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+
+        openchecklistpart.setOnClickListener {
+            var intent = Intent(
+                view.context,
+                ChecklistActivity::class.java
+            )
+            startActivity(intent)
+        }
+
+        openscanpart.setOnClickListener {
+            var intent = Intent(
+                view.context,
+                MainTextRecognizer::class.java
+            )
+            startActivity(intent)
+        }
+    }
 }
