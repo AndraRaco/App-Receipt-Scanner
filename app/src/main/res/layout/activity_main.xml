@@ -21,10 +21,10 @@
             android:orientation="horizontal">
 
         <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select Image"
-                android:onClick="selectImage"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="selectImage"
+            android:text="Select Image" />
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
