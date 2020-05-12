@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:context="gallery.GalleryActivity">
+
+        <!--ImageView where image will be set-->
+        <ImageView
+            android:id="@+id/image_view"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_gallery"
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+        <!--Button to pick image-->
+        <Button
+            android:id="@+id/img_pick_btn"
+            android:text="Choose Image"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
