@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:text="To Do List"
+        android:text="Receipt List"
         android:textColor="@color/black"
         android:textSize="26dp" />
 
@@ -63,7 +63,7 @@
         android:layout_below="@id/linearLayout1"
         android:gravity="center"
         android:padding="10dp"
-        android:text="My To Do List"
+        android:text="My Receipt List"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
@@ -72,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_below="@id/textView1"
+        android:layout_marginTop="1dp"
         android:choiceMode="multipleChoice" />
 
 </RelativeLayout>
