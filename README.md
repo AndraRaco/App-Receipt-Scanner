@@ -1,7 +1,6 @@
 # App-Receipt-Scanner
 
-An Android app that scans a receipt and calculates how much an individual should pay/tip written in Kotlin.
-
+An Android app (written in Kotlin) that scans a receipt and calculates how much an individual should pay/tip. 
 ## Requirements
 
 - !!!!!!DE ADAUGAT!!!!!!!
