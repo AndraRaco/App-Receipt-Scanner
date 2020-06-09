@@ -1,6 +1,7 @@
 # App-Receipt-Scanner
 
-An Android app (written in Kotlin) that scans a receipt and calculates how much an individual should pay/tip. 
+An Android app (written in Kotlin) that scans a receipt and calculates how much an individual should pay/tip. Let's imagine for a moment how easy will it be to use this app as opposed to everyone having to calculate its share. The very first advantage is the fact that there will be no mistakes and we must be realistic, more often than not, splitting the bil results in a lot of mistakes. We either forgot to add a product or we even forgot that we have consumed it or virtually we mistype a number when we try to calculate and just with a simple mistake like that, everything goes south. This app makes it everything easy for us, which I believe is just the primary scope of day-to-day technology. 
+
 ## Requirements
 
 - !!!!!!DE ADAUGAT!!!!!!!
@@ -17,8 +18,7 @@ When the app is installed, the user will see the some pictures which presents th
 
 **- How the app functions (features list)** (cred ca am inclus aici feature urile, daca lipseste cv adaugati)
 
-Basically, the user can either opt for scanning a receipt or create a checklist. If he chose to scan an receipt, he will be asked to take a photo of the receipt or use a photo from the gallery. Either way, the scanner will build a list containing the products (name and price). The user can modify this checklist should it contain any mistakes by adding, deleting or clearing the list. These operations can be done by pressing the buttons having the same names. Alongside with the name of the product and the price, the checklist also contains a checkbox which allows the user to select that product. After the checklist is finalized, each buyer will select the products that he consumed by pressing the checkbox of the product. When he finishes, he will press 'Done' button and the total sum will apear on the screen. 
-
+Basically, the user can either opt for scanning a receipt or create a checklist. If he chose to scan an receipt, he will be asked to take a photo of the receipt or use a photo from the gallery. Either way, the scanner will build a list containing the products (name and price). The user can modify this checklist should it contain any mistakes by adding, deleting or clearing the list. These operations can be done by pressing the buttons having the same names. Alongside with the name of the product and the price, the checklist also contains a checkbox which allows the user to select that product. After the checklist is finalized, each buyer will select the products that he consumed by pressing the checkbox of the product. When he finishes, he will press 'Done' button and the total sum will apear on the screen. After he finishes, he will press delete and eveything that he consumed and paid will be deleted. The next user takes the phone and begin the same process by selecting his products from the remaining ones. As a following implementation, the developers will add a new column called quantity which will let the individual select how many products of this kind he has consumed. His part will be substracted from the total after he presses 'Done' button. Another idea is to enable split option as a product could have been shared by multiple individual and once paid, it should be substracted from the total. As a final step, we would like to merge everything and update the app so as to calculate how much should everyone pay and then invites the user to pay his share using a credit card. 
 
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
