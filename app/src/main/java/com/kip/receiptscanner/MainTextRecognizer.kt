@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.text.FirebaseVisionText
+import java.util.*
 
 
 class MainTextRecognizer : AppCompatActivity() {
@@ -62,7 +64,6 @@ class MainTextRecognizer : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Select an Image First", Toast.LENGTH_LONG).show()
         }
-
     }
 
 
@@ -75,5 +76,58 @@ class MainTextRecognizer : AppCompatActivity() {
             val blockText = block.text
             editText.append(blockText + "\n")
         }
+
+        val tuples = getTuples(editText.text.toString())
+        editText.setText("")
+        for (t in tuples) {
+            editText.append(t.toString() + "\n")
+        }
+    }
+
+    fun getTuples(text: String): List<Pair<Float, String>> {
+        var produse = mutableListOf<Pair<Float, String>>()
+        var produs_crt = 0
+        var pret_crt = 0
+        var nume_crt = 0
+        var started = false
+        val lines = text.split("\n")
+        for (line in lines) {
+            if ("lei" in line.toLowerCase(Locale.getDefault())) {
+                started = true
+                continue
+            }
+            if (!started) {
+                continue
+            }
+            if ("total" == line.toLowerCase(Locale.getDefault())) {
+                break
+            }
+
+            if (" buc" in line.toLowerCase(Locale.getDefault())) {
+                val words = line.split(' ')
+                if (words.size >= 4) {
+                    val nr = words[3].toFloat()
+                    if (pret_crt == produs_crt) {
+                        produse.add(Pair(nr, ""))
+                        produs_crt += 1
+                        pret_crt += 1
+                    } else {
+                        produse[pret_crt] = Pair(nr, produse[pret_crt].second)
+                        pret_crt += 1
+                    }
+                }
+            } else if (!line[0].isDigit() && "discount" !in line.toLowerCase(Locale.getDefault())
+                && "total" !in line.toLowerCase(Locale.getDefault())){
+                if (nume_crt == produs_crt) {
+                    produse.add(Pair(0.toFloat(), line))
+                    produs_crt += 1
+                    nume_crt += 1
+                } else {
+                    produse[nume_crt] = Pair(produse[nume_crt].first, line)
+                    nume_crt += 1
+                }
+            }
+        }
+        return produse
     }
 }
