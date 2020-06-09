@@ -4,7 +4,8 @@ An Android app (written in Kotlin) that scans a receipt and calculates how much 
 
 ## Requirements
 
-- !!!!!!DE ADAUGAT!!!!!!!
+- !!!!!!DE ADAUGAT DACA MAI E CEVA!!!!!!!
+- every current version of Android 
 
 ## Installing
 
