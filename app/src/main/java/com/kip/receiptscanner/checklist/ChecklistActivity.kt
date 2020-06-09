@@ -3,15 +3,22 @@ package com.kip.receiptscanner.checklist
 import android.os.Bundle
 import android.util.SparseBooleanArray
 import android.widget.ArrayAdapter
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import com.kip.receiptscanner.R
 
 import kotlinx.android.synthetic.main.activity_checklist.*
-import kotlinx.android.synthetic.main.activity_main_drawer.*
 import kotlinx.android.synthetic.main.app_bar_main_drawer.*
 
 class ChecklistActivity : AppCompatActivity() {
+
+    class Product(name: String, price: Double) {
+        var name : String = ""
+        var price : Double = 0.0
+
+        class Product(val name: String = "", val price: Double = 0.0){}
+
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,15 +26,18 @@ class ChecklistActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Initializing the array lists and the adapter
-        var itemlist = arrayListOf<String>()
-        var adapter = ArrayAdapter<String>(this,
+        var itemlist = arrayListOf<Product>()
+        var adapter = ArrayAdapter<Product>(this,
             android.R.layout.simple_list_item_multiple_choice
             , itemlist)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
 
-            itemlist.add(editText.text.toString())
+            var name : String  = editText.text.toString().substringBefore(' ')
+            var price : Double = editText.text.toString().substringAfter(' ').toDouble()
+            val p =  Product(name, price)
+            itemlist.add(p)
             listView.adapter =  adapter
             adapter.notifyDataSetChanged()
             // This is because every time when you add the item the input space or the edit text space will be cleared
