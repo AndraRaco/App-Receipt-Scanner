@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment" >
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="526dp"
+        android:layout_height="876dp"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="50dp"
+        android:src="@drawable/empty_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/editText2"
         android:layout_width="0dp"
@@ -63,6 +75,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="50dp"
         android:src="@drawable/card"
         app:layout_constraintBottom_toTopOf="@+id/actionContainer"
         app:layout_constraintEnd_toEndOf="parent"
