@@ -25,21 +25,21 @@ As a following implementation, the developers will add a new column called quant
 **- App's component's  description** (descrierea de componente)
 va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat ceva adaugati!! banuiesc ca vrea sa luam componentele din xml si sa explicam rolul lor
 
- 1. Home Page design 
+- **Home Page design** 
 !! Sa adauge cine a facut-o pls !!
 
- 2. Navigation drawer
+ - **Navigation drawer**
 !la fel :(!
 
-3. Scanner page
+- **Scanner page**
 !la fel :(!
 
-4. Checklist's components - a relative Layout which contains:
-       1. TextView - title of the page - Receipt List
-       2.  EditText - textbox in which we write the name of the product we want to add, alongside with its price
-       3. LinearLayout which contains 3 Buttons (Add, Delete, Clear) each of them having a specific functionality. Add adds a new product (written in EditText box), Delete removes the selected item, Clear (deletes every instance of the list)
-       4. TextView - marks the beginning the receipt list - My Receipt List
-       5. ListView - dynamic list which contains the added items resulted from scanning and/or added through the Checklist 
+- **Checklist's components** - a relative Layout which contains:
+   - **TextView** - title of the page - Receipt List
+   - **EditText** - textbox in which we write the name of the product we want to add, alongside with its price
+   - **LinearLayout** - contains 3 Buttons (Add, Delete, Clear) each of them having a specific functionality. Add adds a                              new product (written in EditText box), Delete removes the selected item, Clear (deletes every                                  instance of the list)
+   - **TextView** - marks the beginning the receipt list - My Receipt List 
+   - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist 
 
 **- App's appearance (design description)** (mai trebuie adaugat aici - descriere de aspect) 
 
