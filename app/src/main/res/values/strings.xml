@@ -37,4 +37,6 @@
 
 
     <string name="welcome_home">Welcome,\nplease select one of the app functions</string>
+
+    <string name="price">Price</string>
 </resources>

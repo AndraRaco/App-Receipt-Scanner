@@ -67,6 +67,13 @@
         android:textColor="@color/black"
         android:textSize="20dp" />
 
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView1"
+        android:choiceMode="multipleChoice"/>-->
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
