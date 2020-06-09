@@ -39,6 +39,9 @@ As a [type of user], I want [an action] so that [a benefit/a value]
 
 We monitorized our backlog creation using Trello. It can be found [here](https://trello.com/b/fLciePHL/receipt-scanner).
 
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Screenshot%202020-06-09%20at%2020.00.34.png)
+
+
 
 **3. How the app functions (features list)** (cred ca am inclus aici feature urile, daca lipseste cv adaugati)
 
