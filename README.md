@@ -29,17 +29,26 @@ As a [type of user], I want [an action] so that [a benefit/a value]
 10. As John, I want to link my credit card to my profile so that I can pay for a meal faster, easier and without using cash.
 11. As Mary, I want to use an app that makes it easy so split a bill when going out with my friends.
 12. As a math addict, I want to use a tip calculator so that I can get the formula behind the app. 
+13. As a customer, I don't want to worry about who is going to foot the bill so that I can enjoy my going out.
+14. As an user I want an app which will make my life easier so that I won't worry about how much I have to pay.
+15. As a young teenager, I want to not stress myself about the bill so that I can have fun with my friends.
+16. As a good mathematician, I don't want to constantly calculate how much should everyone pay, so as to get the split right.
+17. As a waiter, I want the customers to have a great time so that I will receive tips. 
+
+**2. Backlog Creation**
+
+We monitorized our backlog creation using Trello. It can be found [here](https://trello.com/b/fLciePHL/receipt-scanner).
 
 
-**2. How the app functions (features list)** (cred ca am inclus aici feature urile, daca lipseste cv adaugati)
+**3. How the app functions (features list)** (cred ca am inclus aici feature urile, daca lipseste cv adaugati)
 
 Basically, the user can either opt for scanning a receipt or create a checklist. If he chose to scan an receipt, he will be asked to take a photo of the receipt or use a photo from the gallery. Either way, the scanner will build a list containing the products (name and price). The user can modify this checklist should it contain any mistakes by adding, deleting or clearing the list. These operations can be done by pressing the buttons having the same names. Alongside with the name of the product and the price, the checklist also contains a checkbox which allows the user to select that product. After the checklist is finalised, each buyer will select the products that he consumed by pressing the checkbox of the product. When he finishes, he will press 'Done' button and the total sum will appear on the screen. After he finishes, he will press delete and everything that he consumed and paid will be deleted. The next user takes the phone and begin the same process by selecting his products from the remaining ones.
 
-**3. Follow up implementations (future features)**
+**4. Follow up implementations (future features)**
 
 As a following implementation, the developers will add a new column called quantity which will let the individual select how many products of this kind he has consumed. His part will be subtracted from the total after he presses 'Done' button. Another idea is to enable split option as a product could have been shared by multiple individual and once paid, it should be subtracted from the total. As a final step, we would like to merge everything and update the app so as to calculate how much should everyone pay and then invites the user to pay his share using a credit card. This thing can be implemented in accordance with restaurant's personnel. If the bill will come in this form instead of as a receipt on a paper. The consumer will not need to scan the receipt and then calculate. The restaurant's personnel should bring the bill in this format and the user should select their products and pay them using a credit card. Just like that the weiter's job gets easier because nobody will ask for a separate bill which is a daunting job when you have a lot of customers. Needless to say, the consumers will be deprived of having to calculate a lot in order to see how much he has to pay and the risk of making a mistake is virtually inexistent.
 
-**4. App's component's  description** (descrierea de componente)
+**5. App's component's  description** (descrierea de componente)
 va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat ceva adaugati!! banuiesc ca vrea sa luam componentele din xml si sa explicam rolul lor
 
 - **Home Page design** 
@@ -58,7 +67,7 @@ va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat
    - **TextView** - marks the beginning the receipt list - My Receipt List 
    - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist 
 
-**5. App's appearance (design description)** (mai trebuie adaugat aici - descriere de aspect) 
+**6. App's appearance (design description)** (mai trebuie adaugat aici - descriere de aspect) 
 
 When the app is installed, the user will see the some pictures which presents the app's basic features. The app has also a navigation drawer whose purpose is to redirect the user to either the homepage, the Scanner or the Checklist. The homepage invites the user to select one of the app's functions (Load scanner or Open Checklist).
 
