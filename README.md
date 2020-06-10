@@ -125,7 +125,7 @@ When the app is installed, the user will see the three pictures which presents t
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
-# Class list
+### Class list
 - ChecklistActivity
 - ProductAdapter
 - GalleryActivity
