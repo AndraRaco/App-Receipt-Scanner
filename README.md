@@ -125,14 +125,16 @@ When the app is installed, the user will see the three pictures which presents t
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
-- ChecklistActivity
-    - info:
-    - type:
-    - behaviour:
-- ProductAdapter
-    - info:
-    - type:
-    - behaviour:
+- Splash
+    - info: the first activity that starts when the app launches and acts as a welcome message/ loading page
+    - type: AppCompatActivity
+    - behaviour: starts every time the app launches, runs for 2 seconds and then reddirects to either slider activity or main activity, depending on wether or not the isFirstTime variable is true or false
+
+- Slider
+    - info: a sliding welcome message that briefly describes the app
+    - type: AppCompatActivity
+    - behaviour: loads the first time the user opens the app after an install/update and contains short messages to inform the user about new app functionalities
+
 - HomeFragment
     - info: part of the main activity, the app's homepage, with two buttons to load the checklist and scan activities
     - type: Fragment
@@ -164,19 +166,16 @@ When the app is installed, the user will see the three pictures which presents t
                         startActivity(intent)
                     }
                  ```
+                 
 - MainTextRecognizer
     - info:
     - type:
     - behaviour:
-- Slider
-    - info: a sliding welcome message that briefly describes the app
-    - type: AppCompatActivity
-    - behaviour: loads the first time the user opens the app after an install/update and contains short messages to inform the user about new app functionalities
-- Splash
-    - info: the first activity that starts when the app launches and acts as a welcome message/ loading page
-    - type: AppCompatActivity
-    - behaviour: starts every time the app launches, runs for 2 seconds and then reddirects to either slider activity or main activity, depending on wether or not the isFirstTime variable is true or false
-
+    
+- ChecklistActivity
+    - info:
+    - type:
+    - behaviour:
 
 ## Protocoale de teste- structurate pe cap care sa corespunda descrierii anterioare, protocoale de testare care se ref la testele efectuate si la rezultatele lor
 
