@@ -51,27 +51,36 @@
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add" />
+            android:backgroundTint="#c24081"
+            android:text="Add"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Delete" />
+            android:backgroundTint="#c24081"
+            android:text="Delete"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Clear" />
+            android:backgroundTint="#c24081"
+            android:text="Clear"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/calculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DONE" />
+            android:backgroundTint="#c24081"
+            android:text="DONE"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <TextView
