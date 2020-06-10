@@ -3,6 +3,7 @@ package com.kip.receiptscanner.checklist
 import android.os.Bundle
 import android.util.SparseBooleanArray
 import android.widget.ArrayAdapter
+import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import com.kip.receiptscanner.R
 
@@ -11,6 +12,8 @@ import kotlinx.android.synthetic.main.activity_checklist.add
 import kotlinx.android.synthetic.main.activity_checklist.clear
 import kotlinx.android.synthetic.main.activity_checklist.delete
 import kotlinx.android.synthetic.main.app_bar_main_drawer.*
+import kotlinx.android.synthetic.main.list_products.view.*
+
 //import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 class ChecklistActivity : AppCompatActivity() {
@@ -56,6 +59,10 @@ class ChecklistActivity : AppCompatActivity() {
         listView.setOnItemClickListener { adapterView, view, i, l ->
             android.widget.Toast.makeText(this, "You Selected " + itemlist.get(i).name + " " + itemlist.get(i).price, android.widget.Toast.LENGTH_SHORT).show()
             val position: SparseBooleanArray = listView.checkedItemPositions
+
+            val checkbox = view.findViewById<CheckBox>(R.id.checkBox)
+            checkbox!!.isChecked = position[i]
+
         }
 
         // Selecting and Deleting the items from the list when the delete button is pressed
