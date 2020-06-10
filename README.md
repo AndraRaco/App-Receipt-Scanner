@@ -128,10 +128,10 @@ va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat
 
 **Branches**: https://github.com/AndraRaco/App-Receipt-Scanner/branches
 
-**branch text-recognition** -  contains code that allows the user to select an image from the gallery or to take a picture which will be scanned. The scanner is programmed to extract the name of the product and its price;
-**branch pickfromgallery** has code that allows the user to pick an image from gallery when pressing a button;
-**branch ui update** - was used to create a friendly-looking interface for the user;
-**branch checklist** -  allows the user to add an item (name + value) to a list, to remove it from the list or to clear the whole list; then the app calculates the total price for the chosen products;
+- **branch text-recognition** -  contains code that allows the user to select an image from the gallery or to take a picture which will be scanned. The scanner is programmed to extract the name of the product and its price;
+- **branch pickfromgallery** has code that allows the user to pick an image from gallery when pressing a button;
+- **branch ui update** - was used to create a friendly-looking interface for the user;
+- **branch checklist** -  allows the user to add an item (name + value) to a list, to remove it from the list or to clear the whole list; then the app calculates the total price for the chosen products;
 
 **Commits**: https://github.com/AndraRaco/App-Receipt-Scanner/commits
 
