@@ -141,9 +141,11 @@ When the app is installed, the user will see the three pictures which presents t
     - behaviour: serves as the homepage and links to the checklist and scan functionalities of the app using 
     - elements: 
         - openchecklistpart
+        
             - type: button
             - use: links the homepage to the checklist activity
             - code: 
+            
                 ```
                 openchecklistpart.setOnClickListener {
                         var intent = Intent(
@@ -154,9 +156,11 @@ When the app is installed, the user will see the three pictures which presents t
                     }
                  ```
         - openscanpart
+        
             - type: button
             - use: links the homepage to the checklist activity
             - code: 
+            
                 ```
                 openscanpart.setOnClickListener {
                         var intent = Intent(
