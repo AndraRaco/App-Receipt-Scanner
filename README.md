@@ -10,7 +10,7 @@ An Android app (written in Kotlin) that scans a receipt and calculates how much 
 
 Once the app will have every feature ready, it will be published on Android Store and be available to the public.
 
-## Describing the app - (non-tehbical description - user stories, backlog creation, features list, design description, behavior description)
+## Describing the app - (non-tehnical description - user stories, backlog creation, features list, design description, behavior description)
 
 ### 1. User stories
 
