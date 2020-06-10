@@ -141,13 +141,20 @@ When the app is installed, the user will see the three pictures which presents t
     - info: part of the main activity, the app's homepage, with two buttons to load the checklist and scan activities
     - type: Fragment
     - behaviour: serves as the homepage and links to the checklist and scan functionalities of the app using 
-    ```openchecklistpart.setOnClickListener {
-            var intent = Intent(
-                view.context,
-                ChecklistActivity::class.java
-            )
-            startActivity(intent)
-        }```
+    - elements: 
+        - openchecklistpart
+            - type: button
+            - use: links the homepage to the checklist activity
+            - code: 
+                ```
+                openchecklistpart.setOnClickListener {
+                        var intent = Intent(
+                            view.context,
+                            ChecklistActivity::class.java
+                        )
+                        startActivity(intent)
+                    }
+                 ```
 - MainTextRecognizer
     - info:
     - type:
