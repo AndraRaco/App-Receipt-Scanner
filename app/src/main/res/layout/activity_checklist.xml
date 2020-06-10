@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editText"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <Button
             android:id="@+id/add"
@@ -57,15 +57,21 @@
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="5dp"
             android:text="Delete" />
 
         <Button
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="5dp"
             android:text="Clear" />
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONE" />
     </LinearLayout>
 
     <TextView

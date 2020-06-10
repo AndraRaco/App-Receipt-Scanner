@@ -5,6 +5,7 @@ import android.util.SparseBooleanArray
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import com.kip.receiptscanner.R
 
 import kotlinx.android.synthetic.main.activity_checklist.*
@@ -29,15 +30,9 @@ class ChecklistActivity : AppCompatActivity() {
 
         var itemlist = arrayListOf<Product>()
         listView.adapter = ProductAdapter(this, itemlist)
-        /*var adapter = ArrayAdapter<Product>(this,
-            android.R.layout.simple_list_item_multiple_choice
-            , itemlist)*/
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
-
-            /*var name : String  = editText.text.toString().substringBefore(' ')
-            var price : Double = editText.text.toString().substringAfter(' ').toDouble()*/
             val name = editText.text.toString()
             val price = et_price.text.toString().toDouble()
             val p =  Product(name, price)
@@ -60,6 +55,7 @@ class ChecklistActivity : AppCompatActivity() {
             android.widget.Toast.makeText(this, "You Selected " + itemlist.get(i).name + " " + itemlist.get(i).price, android.widget.Toast.LENGTH_SHORT).show()
             val position: SparseBooleanArray = listView.checkedItemPositions
 
+            // Check the checkbox
             val checkbox = view.findViewById<CheckBox>(R.id.checkBox)
             checkbox!!.isChecked = position[i]
 
@@ -79,6 +75,25 @@ class ChecklistActivity : AppCompatActivity() {
             }
             position.clear()
             (listView.adapter as ProductAdapter).notifyDataSetChanged()
+        }
+
+        // Calculate how much has the person to pay
+        calculate.setOnClickListener {
+            val position: SparseBooleanArray = listView.checkedItemPositions
+            val count = listView.count
+            var sum: Double = 0.0
+
+            var item = count - 1
+            while (item >= 0) {
+                if (position.get(item))
+                {
+                    val priceOfProduct = itemlist[item].price
+                    sum += priceOfProduct
+                }
+                item--
+            }
+
+            android.widget.Toast.makeText(this, "You have to pay $sum", android.widget.Toast.LENGTH_SHORT).show()
         }
 
     }
