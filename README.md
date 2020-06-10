@@ -11,11 +11,9 @@ An Android app (written in Kotlin) that scans a receipt and calculates how much 
 
 Once the app will have every feature ready, it will be published on Android Store and be available to the public.
 
-## Describing the app - features list (descriere nontehnica- user stories, features list, descriere de componente, descriere de aspect)
+## Describing the app - (non-tehbical description - user stories, backlog creation, features list, design description, behavior description)
 
-**1. User's stories**
-
-As a [type of user], I want [an action] so that [a benefit/a value]
+**1. User stories**
 
 1. As a waiter, I want a faster way to receive a higher tip so that I can put aside some money for a vacation.
 2. As Karen, I want to organise my tips better so I can feel more in control.
@@ -42,10 +40,7 @@ We monitorized our backlog creation using Trello. It can be found [here](https:/
 ![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Backlog%20creation.png)
 
 
-
-**3. How the app functions (features list)** (cred ca am inclus aici feature urile, daca lipseste cv adaugati)
-
-**Feature's list:**
+**3. Features list**
 
 - Scanning a receipt and extracting the product's name and price
 - Creating a checklist from scratch
@@ -63,8 +58,51 @@ Basically, the user can either opt for **scanning a receipt** or **create a chec
 
 As a following implementation, the developers will add a **new column called quantity** which will let the individual select how many products of this kind he has consumed. His part will be subtracted from the total after he presses 'Done' button. Another idea is to enable **split option** as a product could have been shared by multiple individual and once paid, it should be subtracted from the total. As a final step, we would like to merge everything and update the app so as to calculate how much should everyone pay and then invites the user to **pay his share using a credit card**. This thing can be implemented in accordance with restaurant's personnel. If the bill will come in this form instead of as a receipt on a paper. The consumer will not need to scan the receipt and then calculate. The restaurant's personnel should bring the bill in this format and the user should select their products and pay them using a credit card. Just like that the weiter's job gets easier because nobody will ask for a separate bill which is a daunting job when you have a lot of customers. Needless to say, the consumers will be deprived of having to calculate a lot in order to see how much he has to pay and the risk of making a mistake is virtually inexistent.
 
-**5. App's component's  description** (descrierea de componente)
-va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat ceva adaugati!! banuiesc ca vrea sa luam componentele din xml si sa explicam rolul lor
+**6. App's appearance (design description)**  
+
+When the app is installed, the user will see the three pictures which presents the app's basic features. The app has also a navigation drawer whose purpose is to redirect the user to either the homepage, the Scanner or the Checklist. The homepage invites the user to select one of the app's functions (Load scanner or Open Checklist).
+
+- **Installation Pages design** - consists of three pictures aiming to present the app's functionalities.These apeears only the first time the app is installed. Every page has two buttons (Skip and Next) which can be found in **activity_slider.xml**.
+   - **welcome_slider1.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Welcome - <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Ever felt tired of keeping track of the receipt? -
+    - **welcome_slider2.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - We got you - <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Just take a quick photo or chose one from your gallery -
+    - **welcome_slider3.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Sync - <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Remember to save your information over the cloud with a simple login -
+    
+ - **Welcome Page design** - appears every time the app is opened
+    - **activity_splash.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ProgressBar - <br>
+
+    
+    
+                            
+
+
+- **Navigation drawer**
+!la fel :(!
+
+- **Scanner page**
+!la fel :(!
+
+- **Checklist** - activity_checklist.xml - a relative Layout which contains:
+   - **TextView** - title of the page - Receipt List
+   - **EditText** - textbox in which we write the name of the product we want to add. The product is created based on **list_products.xml** which has two TextViews (Name and Price) and a checkbox.
+   - **EditText** - textbox in which we write the price of the product we want to add
+   - **LinearLayout** - contains 3 Buttons (Add, Delete, Clear, Done) each of them having a specific functionality. Add adds a                         new product (written in EditText box), Delete removes the selected item, Clear (deletes every                                 instance of the list, Done prints the total sum that has to be paid by an individual)
+   - **TextView** - marks the beginning the receipt list - My Receipt List 
+   - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist
+
+   
+**5. App's behaviour description** (descrierea de comportamente)
+va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat ceva adaugati!! 
 
 - **Home Page design** 
 !! Sa adauge cine a facut-o pls !!
@@ -75,31 +113,7 @@ va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat
 - **Scanner page**
 !la fel :(!
 
-- **Checklist's components** - a relative Layout which contains:
-   - **TextView** - title of the page - Receipt List
-   - **EditText** - textbox in which we write the name of the product we want to add, alongside with its price
-   - **LinearLayout** - contains 3 Buttons (Add, Delete, Clear) each of them having a specific functionality. Add adds a                              new product (written in EditText box), Delete removes the selected item, Clear (deletes every                                  instance of the list)
-   - **TextView** - marks the beginning the receipt list - My Receipt List 
-   - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist 
-
-**6. App's appearance (design description)** (mai trebuie adaugat aici - descriere de aspect) 
-
-When the app is installed, the user will see the some pictures which presents the app's basic features. The app has also a navigation drawer whose purpose is to redirect the user to either the homepage, the Scanner or the Checklist. The homepage invites the user to select one of the app's functions (Load scanner or Open Checklist).
-
-- **App Icon??**
-
-- **Home Page design** 
-!! Sa adauge cine a facut-o pls !!
-
-- **Navigation drawer**
-!la fel :(!
-
-- **Scanner page**
-!la fel :(!
-
-- **Checklist**
-!la fel :(!
-
+- **Checklist** 
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
