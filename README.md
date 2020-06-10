@@ -39,17 +39,29 @@ As a [type of user], I want [an action] so that [a benefit/a value]
 
 We monitorized our backlog creation using Trello. It can be found [here](https://trello.com/b/fLciePHL/receipt-scanner).
 
-![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Screenshot%202020-06-09%20at%2020.00.34.png)
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Backlog%20creation.png)
 
 
 
 **3. How the app functions (features list)** (cred ca am inclus aici feature urile, daca lipseste cv adaugati)
 
-Basically, the user can either opt for scanning a receipt or create a checklist. If he chose to scan an receipt, he will be asked to take a photo of the receipt or use a photo from the gallery. Either way, the scanner will build a list containing the products (name and price). The user can modify this checklist should it contain any mistakes by adding, deleting or clearing the list. These operations can be done by pressing the buttons having the same names. Alongside with the name of the product and the price, the checklist also contains a checkbox which allows the user to select that product. After the checklist is finalised, each buyer will select the products that he consumed by pressing the checkbox of the product. When he finishes, he will press 'Done' button and the total sum will appear on the screen. After he finishes, he will press delete and everything that he consumed and paid will be deleted. The next user takes the phone and begin the same process by selecting his products from the remaining ones.
+**Feature's list:**
+
+- Scanning a receipt and extracting the product's name and price
+- Creating a checklist from scratch
+- Taking a photo of the receipt
+- Chosing a photo from the gallery
+- Creating a checklist based on the scan
+- Editing a checklist
+- Calculating the total sum that a individual has to pay based on his selection from the checklist
+- Deleting an individual's selected products
+- Clearing a checklist
+    
+Basically, the user can either opt for **scanning a receipt** or **create a checklist**. If he chose to scan an receipt, he will be asked to **take a photo of the receipt** or **use a photo from the gallery**. Either way, the scanner will **build a list** containing the products (name and price). The user can **modify this checklist** should it contain any mistakes by **adding/deleting a product or clearing the list**. These operations can be done by pressing the buttons having the same names. Alongside with the name of the product and the price, the checklist also contains a checkbox which allows the user to select that product. After the checklist is finalised, each buyer will select the products that he consumed by pressing the checkbox of the product. When he finishes, he will press 'Done' button and the **total sum will appear on the screen**. After he finishes, he will press delete and everything that he consumed and paid will be deleted. The next user takes the phone and begin the same process by selecting his products from the remaining ones.
 
 **4. Follow up implementations (future features)**
 
-As a following implementation, the developers will add a new column called quantity which will let the individual select how many products of this kind he has consumed. His part will be subtracted from the total after he presses 'Done' button. Another idea is to enable split option as a product could have been shared by multiple individual and once paid, it should be subtracted from the total. As a final step, we would like to merge everything and update the app so as to calculate how much should everyone pay and then invites the user to pay his share using a credit card. This thing can be implemented in accordance with restaurant's personnel. If the bill will come in this form instead of as a receipt on a paper. The consumer will not need to scan the receipt and then calculate. The restaurant's personnel should bring the bill in this format and the user should select their products and pay them using a credit card. Just like that the weiter's job gets easier because nobody will ask for a separate bill which is a daunting job when you have a lot of customers. Needless to say, the consumers will be deprived of having to calculate a lot in order to see how much he has to pay and the risk of making a mistake is virtually inexistent.
+As a following implementation, the developers will add a **new column called quantity** which will let the individual select how many products of this kind he has consumed. His part will be subtracted from the total after he presses 'Done' button. Another idea is to enable **split option** as a product could have been shared by multiple individual and once paid, it should be subtracted from the total. As a final step, we would like to merge everything and update the app so as to calculate how much should everyone pay and then invites the user to **pay his share using a credit card**. This thing can be implemented in accordance with restaurant's personnel. If the bill will come in this form instead of as a receipt on a paper. The consumer will not need to scan the receipt and then calculate. The restaurant's personnel should bring the bill in this format and the user should select their products and pay them using a credit card. Just like that the weiter's job gets easier because nobody will ask for a separate bill which is a daunting job when you have a lot of customers. Needless to say, the consumers will be deprived of having to calculate a lot in order to see how much he has to pay and the risk of making a mistake is virtually inexistent.
 
 **5. App's component's  description** (descrierea de componente)
 va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat ceva adaugati!! banuiesc ca vrea sa luam componentele din xml si sa explicam rolul lor
