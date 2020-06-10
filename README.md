@@ -39,7 +39,6 @@ We monitorized our backlog creation using Trello. It can be found [here](https:/
 
 ![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Backlog%20creation.png)
 
-
 **3. Features list**
 
 - Scanning a receipt and extracting the product's name and price
@@ -58,7 +57,7 @@ Basically, the user can either opt for **scanning a receipt** or **create a chec
 
 As a following implementation, the developers will add a **new column called quantity** which will let the individual select how many products of this kind he has consumed. His part will be subtracted from the total after he presses 'Done' button. Another idea is to enable **split option** as a product could have been shared by multiple individual and once paid, it should be subtracted from the total. As a final step, we would like to merge everything and update the app so as to calculate how much should everyone pay and then invites the user to **pay his share using a credit card**. This thing can be implemented in accordance with restaurant's personnel. If the bill will come in this form instead of as a receipt on a paper. The consumer will not need to scan the receipt and then calculate. The restaurant's personnel should bring the bill in this format and the user should select their products and pay them using a credit card. Just like that the weiter's job gets easier because nobody will ask for a separate bill which is a daunting job when you have a lot of customers. Needless to say, the consumers will be deprived of having to calculate a lot in order to see how much he has to pay and the risk of making a mistake is virtually inexistent.
 
-**6. App's appearance (design description)**  
+**5. App's appearance (design description)**  
 
 When the app is installed, the user will see the three pictures which presents the app's basic features. The app has also a navigation drawer whose purpose is to redirect the user to either the homepage, the Scanner or the Checklist. The homepage invites the user to select one of the app's functions (Load scanner or Open Checklist).
 
@@ -80,12 +79,7 @@ When the app is installed, the user will see the three pictures which presents t
     - **activity_splash.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ProgressBar - <br>
-
-    
-    
-                            
-
-
+                       
 - **Navigation drawer**
 !la fel :(!
 
@@ -99,9 +93,12 @@ When the app is installed, the user will see the three pictures which presents t
    - **LinearLayout** - contains 3 Buttons (Add, Delete, Clear, Done) each of them having a specific functionality. Add adds a                         new product (written in EditText box), Delete removes the selected item, Clear (deletes every                                 instance of the list, Done prints the total sum that has to be paid by an individual)
    - **TextView** - marks the beginning the receipt list - My Receipt List 
    - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist
-
    
-**5. App's behaviour description** (descrierea de comportamente)
+**6. UML Use Case Diagram**  
+
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/UML_use_case.png)
+   
+**7. App's behaviour description** (descrierea de comportamente)
 va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat ceva adaugati!! 
 
 - **Home Page design** 
@@ -114,6 +111,17 @@ va trebui sa le luam pe rand si sa completam cate ceva la fiecare. daca am uitat
 !la fel :(!
 
 - **Checklist** 
+
+## Source control
+
+**Branches**: https://github.com/AndraRaco/App-Receipt-Scanner/branches
+
+**branch text-recognition** -  contains code that allows the user to select an image from the gallery or to take a picture which will be scanned. The scanner is programmed to extract the name of the product and its price;
+**branch pickfromgallery** has code that allows the user to pick an image from gallery when pressing a button;
+**branch ui update** - was used to create a friendly-looking interface for the user;
+**branch checklist** -  allows the user to add an item (name + value) to a list, to remove it from the list or to clear the whole list; then the app calculates the total price for the chosen products;
+
+**Commits**: https://github.com/AndraRaco/App-Receipt-Scanner/commits
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
