@@ -16,6 +16,6 @@ class CheckListUnitTest {
     fun sumProducts_isCorrect() {
         val tested = ChecklistActivity()
 
-        tested.
+//        tested.
     }
 }
