@@ -79,12 +79,24 @@ When the app is installed, the user will see the three pictures which presents t
     - **activity_splash.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ProgressBar - <br>
+    
+ - **Home Page design** - 
+    - **app_bar_main_drawer.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Twp Buttons (Load Scanner and Open Checklist) - <br>
                        
 - **Navigation drawer**
-!la fel :(!
+    - **activity_main_drawer.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- NavigationView implemented by Android  <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Two TextViews for username and passward <br>
 
 - **Scanner page**
-!la fel :(!
+    - **content_main_drawer.xml** <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView (here will appear the image) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Twp Buttons (Select image - takes the user to the gallery in order to select an                  image and Recognise Text - scans the image that was selected) - <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- EditText (here will appear the text - names and prices of the products-) <br>
+    
 
 - **Checklist** - activity_checklist.xml - a relative Layout which contains:
    - **TextView** - title of the page - Receipt List
