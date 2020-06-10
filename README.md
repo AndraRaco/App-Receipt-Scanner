@@ -172,14 +172,14 @@ When the app is installed, the user will see the three pictures which presents t
                  ```
                  
 - MainTextRecognizer
-    - info:
-    - type:
-    - behaviour:
+    - info: the app activity that scans a given image
+    - type: AppCompatActivity
+    - behaviour: the user selects an image, either from the camera or from the gallery, then, using google's firebase ml ocr algorithms, the image is processed as text and saved as a list
     
 - ChecklistActivity
-    - info:
-    - type:
-    - behaviour:
+    - info: app activity that creates a checklist for easy recipie management
+    - type: AppCompatActivity
+    - behaviour: adds items from userimput as a pair < name, price >, stores them in a list and calculates the total of the selected items
 
 ## Protocoale de teste- structurate pe cap care sa corespunda descrierii anterioare, protocoale de testare care se ref la testele efectuate si la rezultatele lor
 
