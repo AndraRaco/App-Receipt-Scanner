@@ -11,30 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kip.receiptscanner.R
 import kotlinx.android.synthetic.main.list_products.view.*
 
-/*class ProductAdapter(private val list: ArrayList<ChecklistActivity.Product>) :
-    RecyclerView.Adapter<ProductAdapter.CustomViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.list_products, parent, false)
-        return CustomViewHolder(view)
-    }
-
-    override fun getItemCount(): Int = list.size
-
-    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.bind(list[position])
-    }
-
-    inner class CustomViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(product: ChecklistActivity.Product) {
-            view.tv_name.text = product.name
-            view.tv_price.text = product.price.toString()
-        }
-    }
-
-}*/
-
-
 class ProductAdapter(private val context: Context, private val products: ArrayList<ChecklistActivity.Product>): BaseAdapter() {
     /*private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater*/
