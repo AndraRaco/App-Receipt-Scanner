@@ -125,14 +125,35 @@ When the app is installed, the user will see the three pictures which presents t
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
-### Class list
 - ChecklistActivity
+    - info:
+    - type:
+    - behaviour
 - ProductAdapter
+    - info:
+    - type:
+    - behaviour
 - GalleryActivity
+    - info:
+    - type:
+    - behaviour
 - HomeFragment
+    - info:
+    - type:
+    - behaviour
 - MainTextRecognizer
+    - info:
+    - type:
+    - behaviour
 - Slider
+    - info:
+    - type:
+    - behaviour
 - Splash
+    - info: the first activity that starts when the app launches and acts as a welcome message/ loading page
+    - type: AppCompatActivity()
+    - behaviour: starts every time the app launches, runs for 2 seconds and then reddirects to either slider activity or main activity, depending on wether or not the isFirstTime variable is true or false
+
 
 ## Protocoale de teste- structurate pe cap care sa corespunda descrierii anterioare, protocoale de testare care se ref la testele efectuate si la rezultatele lor
 
