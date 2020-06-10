@@ -125,7 +125,14 @@ When the app is installed, the user will see the three pictures which presents t
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
-la fel trebuie abordat pentru fiecare
+# Class list
+- ChecklistActivity
+- ProductAdapter
+- GalleryActivity
+- HomeFragment
+- MainTextRecognizer
+- Slider
+- Splash
 
 ## Protocoale de teste- structurate pe cap care sa corespunda descrierii anterioare, protocoale de testare care se ref la testele efectuate si la rezultatele lor
 
