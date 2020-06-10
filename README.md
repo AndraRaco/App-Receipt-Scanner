@@ -125,35 +125,41 @@ When the app is installed, the user will see the three pictures which presents t
 
 ## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
 
-![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/class_diagram.png)
-
 - ChecklistActivity
     - info:
     - type:
-    - behaviour
+    - behaviour:
 - ProductAdapter
     - info:
     - type:
-    - behaviour
+    - behaviour:
 - GalleryActivity
     - info:
     - type:
-    - behaviour
+    - behaviour:
 - HomeFragment
-    - info:
-    - type:
-    - behaviour
+    - info: part of the main activity, the app's homepage, with two buttons to load the checklist and scan activities
+    - type: Fragment
+    - behaviour: serves as the homepage and links to the checklist and scan functionalities of the app using 
+    '''openchecklistpart.setOnClickListener {
+            var intent = Intent(
+                view.context,
+                ChecklistActivity::class.java
+            )
+            startActivity(intent)
+        }
+    '''
 - MainTextRecognizer
     - info:
     - type:
-    - behaviour
+    - behaviour:
 - Slider
-    - info:
-    - type:
-    - behaviour
+    - info: a sliding welcome message that briefly describes the app
+    - type: AppCompatActivity
+    - behaviour: loads the first time the user opens the app after an install/update and contains short messages to inform the user about new app functionalities
 - Splash
     - info: the first activity that starts when the app launches and acts as a welcome message/ loading page
-    - type: AppCompatActivity()
+    - type: AppCompatActivity
     - behaviour: starts every time the app launches, runs for 2 seconds and then reddirects to either slider activity or main activity, depending on wether or not the isFirstTime variable is true or false
 
 
