@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
+import com.kip.receiptscanner.Product
 import com.kip.receiptscanner.R
 
 import kotlinx.android.synthetic.main.activity_checklist.*
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.list_products.view.*
 
 class ChecklistActivity : AppCompatActivity() {
 
-    class Product(var name: String, var price: Double){}
+//    class Product(var name: String, var price: Double){}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

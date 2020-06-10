@@ -8,10 +8,11 @@ import android.widget.Adapter
 import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kip.receiptscanner.Product
 import com.kip.receiptscanner.R
 import kotlinx.android.synthetic.main.list_products.view.*
 
-class ProductAdapter(private val context: Context, private val products: ArrayList<ChecklistActivity.Product>): BaseAdapter() {
+class ProductAdapter(private val context: Context, private val products: ArrayList<Product>): BaseAdapter() {
     /*private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater*/
 
