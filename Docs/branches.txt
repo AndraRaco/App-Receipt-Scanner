@@ -1,0 +1,10 @@
+Source control
+
+Branches: https://github.com/AndraRaco/App-Receipt-Scanner/branches
+
+branch text-recognition contains code that allows the user to select an image and returns the image text
+branch pickfromgallery has code that allows the user to pick an image from gallery when pressing a button
+branch ui-update was used to create a friendly-looking interface for the user
+branch checklist has code that allows the user to add an item(name + value) to a list, to remove it from the list or to clear the whole list; then through the list the app calculates the total price for the chosen products
+
+Commits: https://github.com/AndraRaco/App-Receipt-Scanner/commits

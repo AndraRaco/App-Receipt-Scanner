@@ -2,19 +2,22 @@ package com.kip.receiptscanner.checklist
 
 import android.os.Bundle
 import android.util.SparseBooleanArray
-import android.widget.CheckBox
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.kip.receiptscanner.Product
 import com.kip.receiptscanner.R
+
 import kotlinx.android.synthetic.main.activity_checklist.*
 import kotlinx.android.synthetic.main.app_bar_main_drawer.*
 
-//import kotlinx.android.synthetic.main.fragment_slideshow.*
-
 class ChecklistActivity : AppCompatActivity() {
-//    class Product(var name: String, var price: Double){}
 
-    var itemlist = arrayListOf<Product>()
+    class Product(name: String, price: Double) {
+        var name : String = ""
+        var price : Double = 0.0
+
+        class Product(val name: String = "", val price: Double = 0.0){}
+
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,38 +26,33 @@ class ChecklistActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Initializing the array lists and the adapter
-
-
-        listView.adapter = ProductAdapter(this, itemlist)
+        var itemlist = arrayListOf<Product>()
+        var adapter = ArrayAdapter<Product>(this,
+            android.R.layout.simple_list_item_multiple_choice
+            , itemlist)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
-            val name = editText.text.toString()
-            val price = et_price.text.toString().toDouble()
+
+            var name : String  = editText.text.toString().substringBefore(' ')
+            var price : Double = editText.text.toString().substringAfter(' ').toDouble()
             val p =  Product(name, price)
             itemlist.add(p)
-            //listView.adapter =  adapter
-            (listView.adapter as ProductAdapter).notifyDataSetChanged()
+            listView.adapter =  adapter
+            adapter.notifyDataSetChanged()
             // This is because every time when you add the item the input space or the edit text space will be cleared
             editText.text.clear()
-            et_price.text.clear()
         }
 
         // Clearing all the items in the list when the clear button is pressed
         clear.setOnClickListener {
             itemlist.clear()
-            (listView.adapter as ProductAdapter).notifyDataSetChanged()
+            adapter.notifyDataSetChanged()
         }
 
         // Adding the toast message to the list when an item on the list is pressed
         listView.setOnItemClickListener { adapterView, view, i, l ->
-            android.widget.Toast.makeText(this, "You Selected " + itemlist.get(i).name + " " + itemlist.get(i).price, android.widget.Toast.LENGTH_SHORT).show()
-            val position: SparseBooleanArray = listView.checkedItemPositions
-
-            // Check the checkbox
-            val checkbox = view.findViewById<CheckBox>(R.id.checkBox)
-            checkbox!!.isChecked = position[i]
-
+            android.widget.Toast.makeText(this, "You Selected "+itemlist.get(i), android.widget.Toast.LENGTH_SHORT).show()
         }
 
         // Selecting and Deleting the items from the list when the delete button is pressed
@@ -65,65 +63,13 @@ class ChecklistActivity : AppCompatActivity() {
             while (item >= 0) {
                 if (position.get(item))
                 {
-                    itemlist.removeAt(item)
+                    adapter.remove(itemlist.get(item))
                 }
                 item--
             }
             position.clear()
-            (listView.adapter as ProductAdapter).notifyDataSetChanged()
+            adapter.notifyDataSetChanged()
         }
-
-        // Calculate how much has the person to pay
-        calculate.setOnClickListener {
-            val position: SparseBooleanArray = listView.checkedItemPositions
-            val count = listView.count
-            var sum: Double = 0.0
-
-            var item = count - 1
-            while (item >= 0) {
-                if (position.get(item))
-                {
-                    val priceOfProduct = itemlist[item].price
-                    sum += priceOfProduct
-                }
-                item--
-            }
-
-            android.widget.Toast.makeText(this, "You have to pay $sum", android.widget.Toast.LENGTH_SHORT).show()
-        }
-
-        if (savedInstanceState != null) {
-            val nume = savedInstanceState.getString("nume").toString()
-            val pret = savedInstanceState.getDouble("pret")
-            val p =  Product(nume, pret)
-            itemlist.add(p)
-
-        }
-
-        val test = intent.getStringArrayListExtra("key")
-
-        if (test != null) {
-            for(x in test) {
-                val parts = x.split(',').toTypedArray()
-                val nume = parts[1]
-                val pret = parts[0].toDouble()
-                val p = Product(nume, pret)
-                itemlist.add(p)
-            }
-
-        //    The key argument here must match that used in the other activity
-        }
-
 
     }
-
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        savedInstanceState.putString("nume","Carne")
-        savedInstanceState.putDouble("pret", 15.00)
-        super.onSaveInstanceState(savedInstanceState)
-    }
-
-
-
-
 }
