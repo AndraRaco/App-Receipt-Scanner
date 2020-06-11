@@ -13,17 +13,16 @@ import com.kip.receiptscanner.R
 import kotlinx.android.synthetic.main.list_products.view.*
 
 class ProductAdapter(private val context: Context, private val products: ArrayList<Product>): BaseAdapter() {
-    /*private val inflater: LayoutInflater
-            = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater*/
-
     // Creates a view to be used as a row in the list
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val layoutInflater = LayoutInflater.from(context)
         val rowMain = layoutInflater.inflate(R.layout.list_products,parent, false)
 
+        // Add the name of the product to the row
         val tvName = rowMain.findViewById<TextView>(R.id.tv_name)
         tvName.text = products[position].name
 
+        // Add the price of the product to the row
         val tvPrice = rowMain.findViewById<TextView>(R.id.tv_price)
         tvPrice.text = products[position].price.toString()
 
