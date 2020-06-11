@@ -2,6 +2,10 @@
 
 An Android app (written in Kotlin) that scans a receipt and calculates how much an individual should pay/tip. Let's imagine for a moment how easy will it be to use this app as opposed to everyone having to calculate its share. The very first advantage is the fact that there will be no mistakes and we must be realistic, more often than not, splitting the bill results in a lot of mistakes. We either forgot to add a product or we even forgot that we have consumed it or virtually we mistype a number when we try to calculate and just with a simple mistake like that, everything goes south. This app makes it everything easy for us, which I believe is just the primary scope of day-to-day technology. 
 
+## App demo
+
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/app_test.mp4)
+
 ## Requirements
 
 - every current version of Android (works on 99.58% of the devices)
