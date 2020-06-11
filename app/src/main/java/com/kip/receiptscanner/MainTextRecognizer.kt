@@ -84,42 +84,48 @@ class MainTextRecognizer : AppCompatActivity() {
         }
     }
 
-    fun getTuples(text: String): List<Pair<Float, String>> {
-        var produse = mutableListOf<Pair<Float, String>>()
+    fun getTuples(text: String): List<Pair<Double, String>> {
+        var produse = mutableListOf<Pair<Double, String>>()
         var produs_crt = 0
         var pret_crt = 0
         var nume_crt = 0
         var started = false
         val lines = text.split("\n")
         for (line in lines) {
-            if ("lei" in line.toLowerCase(Locale.getDefault())) {
-                started = true
-                continue
-            }
-            if (!started) {
-                continue
-            }
-            if ("total" == line.toLowerCase(Locale.getDefault())) {
+            if ("total" == line.toLowerCase(Locale.getDefault())
+                || "*" in line.toLowerCase(Locale.getDefault())) {
                 break
             }
 
-            if (" buc" in line.toLowerCase(Locale.getDefault())) {
-                val words = line.split(' ')
-                if (words.size >= 4) {
-                    val nr = words[3].toFloat()
-                    if (pret_crt == produs_crt) {
-                        produse.add(Pair(nr, ""))
-                        produs_crt += 1
-                        pret_crt += 1
-                    } else {
-                        produse[pret_crt] = Pair(nr, produse[pret_crt].second)
-                        pret_crt += 1
+            if ("x " in line.toLowerCase(Locale.getDefault())) {
+                val trimmedLine = line.drop(line.toLowerCase(Locale.getDefault()).indexOf("x ") + 2)
+                if (trimmedLine.isEmpty()) {
+                    continue
+                }
+                val words = trimmedLine.split(' ')
+                if (words.isNotEmpty()) {
+                    if (words[0].toDoubleOrNull() != null) {
+                        val nr = words[0].toDouble()
+                        if (pret_crt == produs_crt) {
+                            produse.add(Pair(nr, ""))
+                            produs_crt += 1
+                            pret_crt += 1
+                        } else {
+                            produse[pret_crt] = Pair(nr, produse[pret_crt].second)
+                            pret_crt += 1
+                        }
+                        started = true;
                     }
                 }
-            } else if (!line[0].isDigit() && "discount" !in line.toLowerCase(Locale.getDefault())
-                && "total" !in line.toLowerCase(Locale.getDefault())){
+            } else if (started
+                && !line[0].isDigit()
+                && "discount" !in line.toLowerCase(Locale.getDefault())
+                && "total" !in line.toLowerCase(Locale.getDefault())
+                && "lei" != line.toLowerCase(Locale.getDefault())
+                && "lel" != line.toLowerCase(Locale.getDefault())) {
+
                 if (nume_crt == produs_crt) {
-                    produse.add(Pair(0.toFloat(), line))
+                    produse.add(Pair(0.toDouble(), line))
                     produs_crt += 1
                     nume_crt += 1
                 } else {
