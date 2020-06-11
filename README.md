@@ -140,7 +140,16 @@ When the app is installed, the user will see the three pictures which presents t
      <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/transformed_into_checklist.PNG" width = "335" height="650">
      
-     **Select an item using the checkbox**
+
+- **Checklist** - activity_checklist.xml - a relative Layout which contains:
+   - **TextView** - title of the page - Receipt List
+   - **EditText** - textbox in which we write the name of the product we want to add. The product is created based on **list_products.xml** which has two TextViews (Name and Price) and a checkbox.
+   - **EditText** - textbox in which we write the price of the product we want to add
+   - **LinearLayout** - contains 3 Buttons (Add, Delete, Clear, Done) each of them having a specific functionality. Add adds a                         new product (written in EditText box), Delete removes the selected item, Clear (deletes every                                 instance of the list, Done prints the total sum that has to be paid by an individual)
+   - **TextView** - marks the beginning the receipt list - My Receipt List 
+   - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist
+   
+    **Select an item using the checkbox**
      <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/selected_item.PNG" width = "335" height="650">
      
@@ -163,14 +172,6 @@ When the app is installed, the user will see the three pictures which presents t
     **Clearing the list by pressing Clear**
      <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/pressed_clear.PNG" width = "335" height="650">
-
-- **Checklist** - activity_checklist.xml - a relative Layout which contains:
-   - **TextView** - title of the page - Receipt List
-   - **EditText** - textbox in which we write the name of the product we want to add. The product is created based on **list_products.xml** which has two TextViews (Name and Price) and a checkbox.
-   - **EditText** - textbox in which we write the price of the product we want to add
-   - **LinearLayout** - contains 3 Buttons (Add, Delete, Clear, Done) each of them having a specific functionality. Add adds a                         new product (written in EditText box), Delete removes the selected item, Clear (deletes every                                 instance of the list, Done prints the total sum that has to be paid by an individual)
-   - **TextView** - marks the beginning the receipt list - My Receipt List 
-   - **ListView** - dynamic list which contains the added items resulted from scanning and/or added through the Checklist
    
 ### 7. UML Use Case Diagram  
 
@@ -245,6 +246,16 @@ When the app is installed, the user will see the three pictures which presents t
     - info: app activity that creates a checklist for easy recipie management
     - type: AppCompatActivity
     - behaviour: adds items from userimput as a pair < name, price >, stores them in a list and calculates the total of the selected items
+    
+## Build tools
+Our project is developed using Andorid Studio IDE that has a Gradle-based building tool. When we want to build our project in an APK, so that we can give it to our users to install the application and use it, we go to:
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/build_tools1.jpeg)
+
+
+and click Build APK. Then, in the folder our project is in, it generates 2 files:
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/build_tools2.jpeg)
+
+One of the file, "app-debug.apk", is the apk that will install our application, the other one, "output.json", is a message that tells us if the apk was generated succesfully or not. We then transfer the APK to our mobile device and run it to install the application.
 
 ## Protocoale de teste- structurate pe cap care sa corespunda descrierii anterioare, protocoale de testare care se ref la testele efectuate si la rezultatele lor
 
