@@ -1,3 +1,5 @@
+As a [type of user], I want [an action] so that [a benefit/a value]
+
 1. As a waiter, I want a faster way to receive a higher tip so that I can put aside some money for a vacation.
 2. As Karen, I want to organise my tips better so I can feel more in control.
 3. As a restaurateur (restaurant owner), I want an app that increases the chance of my employees getting a tip after their service.
@@ -10,8 +12,3 @@
 10. As John, I want to link my credit card to my profile so that I can pay for a meal faster, easier and without using cash.
 11. As Mary, I want to use an app that makes it easy so split a bill when going out with my friends.
 12. As a math addict, I want to use a tip calculator so that I can get the formula behind the app. 
-13. As a customer, I don't want to worry about who is going to foot the bill so that I can enjoy my going out.
-14. As an user I want an app which will make my life easier so that I won't worry about how much I have to pay.
-15. As a young teenager, I want to not stress myself about the bill so that I can have fun with my friends.
-16. As a good mathematician, I don't want to constantly calculate how much should everyone pay, so as to get the split right.
-17. As a waiter, I want the customers to have a great time so that I will receive tips.
