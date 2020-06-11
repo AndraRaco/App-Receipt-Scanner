@@ -2,20 +2,25 @@ package com.kip.receiptscanner.checklist
 
 import android.os.Bundle
 import android.util.SparseBooleanArray
+import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import com.kip.receiptscanner.Product
 import com.kip.receiptscanner.R
+
 import kotlinx.android.synthetic.main.activity_checklist.*
+import kotlinx.android.synthetic.main.activity_checklist.add
+import kotlinx.android.synthetic.main.activity_checklist.clear
+import kotlinx.android.synthetic.main.activity_checklist.delete
 import kotlinx.android.synthetic.main.app_bar_main_drawer.*
+import kotlinx.android.synthetic.main.list_products.view.*
 
 //import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 class ChecklistActivity : AppCompatActivity() {
+
 //    class Product(var name: String, var price: Double){}
-
-    var itemlist = arrayListOf<Product>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +29,7 @@ class ChecklistActivity : AppCompatActivity() {
 
         // Initializing the array lists and the adapter
 
-
+        var itemlist = arrayListOf<Product>()
         listView.adapter = ProductAdapter(this, itemlist)
 
         // Adding the items to the list when the add button is pressed
@@ -92,38 +97,5 @@ class ChecklistActivity : AppCompatActivity() {
             android.widget.Toast.makeText(this, "You have to pay $sum", android.widget.Toast.LENGTH_SHORT).show()
         }
 
-        if (savedInstanceState != null) {
-            val nume = savedInstanceState.getString("nume").toString()
-            val pret = savedInstanceState.getDouble("pret")
-            val p =  Product(nume, pret)
-            itemlist.add(p)
-
-        }
-
-        val test = intent.getStringArrayListExtra("key")
-
-        if (test != null) {
-            for(x in test) {
-                val parts = x.split(',').toTypedArray()
-                val nume = parts[1]
-                val pret = parts[0].toDouble()
-                val p = Product(nume, pret)
-                itemlist.add(p)
-            }
-
-        //    The key argument here must match that used in the other activity
-        }
-
-
     }
-
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        savedInstanceState.putString("nume","Carne")
-        savedInstanceState.putDouble("pret", 15.00)
-        super.onSaveInstanceState(savedInstanceState)
-    }
-
-
-
-
 }
