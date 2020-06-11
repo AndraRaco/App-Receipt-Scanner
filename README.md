@@ -2,9 +2,13 @@
 
 An Android app (written in Kotlin) that scans a receipt and calculates how much an individual should pay/tip. Let's imagine for a moment how easy will it be to use this app as opposed to everyone having to calculate its share. The very first advantage is the fact that there will be no mistakes and we must be realistic, more often than not, splitting the bill results in a lot of mistakes. We either forgot to add a product or we even forgot that we have consumed it or virtually we mistype a number when we try to calculate and just with a simple mistake like that, everything goes south. This app makes it everything easy for us, which I believe is just the primary scope of day-to-day technology. 
 
+## App demo
+
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/app_test.mp4)
+
 ## Requirements
 
-- every current version of Android 
+- every current version of Android (works on 99.58% of the devices)
 
 ## Installing
 
@@ -62,35 +66,55 @@ As a following implementation, the developers will add a **new column called qua
 
 When the app is installed, the user will see the three pictures which presents the app's basic features. The app has also a navigation drawer whose purpose is to redirect the user to either the homepage, the Scanner or the Checklist. The homepage invites the user to select one of the app's functions (Load scanner or Open Checklist).
 
+- **App icon**
+
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/App_icon.png)
+
+
 - **Installation Pages design** - consists of three pictures aiming to present the app's functionalities.These apeears only the first time the app is installed. Every page has two buttons (Skip and Next) which can be found in **activity_slider.xml**.
    - **welcome_slider1.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Welcome - <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Ever felt tired of keeping track of the receipt? -
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Ever felt tired of keeping track of the receipt? - 
+    <br>
+    <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_slider1.png" width = "335" height="650">
+    
     - **welcome_slider2.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - We got you - <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Just take a quick photo or chose one from your gallery -
+    <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_slider2.png" width = "335" height="650">
+    
     - **welcome_slider3.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Sync - <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Remember to save your information over the cloud with a simple login -
+    <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_slider3.png" width = "335" height="650">
     
  - **Welcome Page design** - appears every time the app is opened
     - **activity_splash.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ProgressBar - <br>
+    <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_page.png" width = "335" height="650">
     
  - **Home Page design** - 
     - **app_bar_main_drawer.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Twp Buttons (Load Scanner and Open Checklist) - <br>
+    <br>
+    <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/home_page.png" width = "335" height="650">
                        
 - **Navigation drawer**
     - **activity_main_drawer.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- NavigationView implemented by Android  <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Two TextViews for username and passward <br>
+    <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Navigation_drawer.png" width = "335" height="650">
+
 
 - **Scanner page**
     - **content_main_drawer.xml** <br>
@@ -123,7 +147,7 @@ When the app is installed, the user will see the three pictures which presents t
 
 **Commits**: https://github.com/AndraRaco/App-Receipt-Scanner/commits
 
-## Describing the code (tehnical - contine diagrama de clase cu referinta la feature-uri; schema de design, lista si diagrama de clase, functii, proprietati, descriere tehnica de componenente)
+## Describing the code (tehnical - Classes Diagram in reference to features, Design Scheme, Functions and proprieties, Tehnical Description of behaviour)
 
 - Splash
     - info: the first activity that starts when the app launches and acts as a welcome message/ loading page
