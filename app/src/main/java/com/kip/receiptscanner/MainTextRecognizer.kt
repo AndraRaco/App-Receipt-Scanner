@@ -41,7 +41,6 @@ class MainTextRecognizer : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             imageView.setImageURI(data!!.data)
-
         }
     }
 
