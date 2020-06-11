@@ -6,20 +6,12 @@ import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import com.kip.receiptscanner.Product
 import com.kip.receiptscanner.R
-
 import kotlinx.android.synthetic.main.activity_checklist.*
-import kotlinx.android.synthetic.main.activity_checklist.add
-import kotlinx.android.synthetic.main.activity_checklist.clear
-import kotlinx.android.synthetic.main.activity_checklist.delete
 import kotlinx.android.synthetic.main.app_bar_main_drawer.*
-
-//import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 class ChecklistActivity : AppCompatActivity() {
 
-//    class Product(var name: String, var price: Double){}
-
-    private var itemlist = arrayListOf<Product>()
+    private var itemList = arrayListOf<Product>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +19,7 @@ class ChecklistActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Initializing the array lists and the adapter
-        listView.adapter = ProductAdapter(this, itemlist)
+        listView.adapter = ProductAdapter(this, itemList)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
@@ -43,12 +35,12 @@ class ChecklistActivity : AppCompatActivity() {
         listView.setOnItemClickListener { adapterView, view, i, l ->
             android.widget.Toast.makeText(
                 this,
-                "You Selected " + itemlist.get(i).name + " " + itemlist.get(i).price,
+                "You Selected " + itemList.get(i).name + " " + itemList.get(i).price,
                 android.widget.Toast.LENGTH_SHORT
             ).show()
             val position: SparseBooleanArray = listView.checkedItemPositions
 
-            // Check the checkbox
+            // Tick the checkbox
             val checkbox = view.findViewById<CheckBox>(R.id.checkBox)
             checkbox!!.isChecked = position[i]
 
@@ -67,24 +59,26 @@ class ChecklistActivity : AppCompatActivity() {
         // Get an string array containing ("price" + "," + "name") for each product in scanner
         val products = intent.getStringArrayListExtra("Products")
 
+        // If the list of products is not null
         if (products != null) {
             for (x in products) {
-                val parts = x.split(',').toTypedArray()//parse to get the products
+                val parts = x.split(',').toTypedArray() // parse to get the products
+
+                // Create Product object
                 val price = parts[0].toDouble()
                 val name = parts[1]
                 val p = Product(name, price)
-                itemlist.add(p)
+
+                itemList.add(p) // add each element from the products to the itemList
             }
         }
-
-
     }
 
     fun addRow() {
         val name = editText.text.toString()
         val price = et_price.text.toString().toDouble()
         val p = Product(name, price)
-        itemlist.add(p)
+        itemList.add(p)
         //listView.adapter =  adapter
         (listView.adapter as ProductAdapter).notifyDataSetChanged()
         // This is because every time when you add the item the input space or the edit text space will be cleared
@@ -98,7 +92,7 @@ class ChecklistActivity : AppCompatActivity() {
         var item = count - 1
         while (item >= 0) {
             if (position.get(item)) {
-                itemlist.removeAt(item)
+                itemList.removeAt(item)
             }
             item--
         }
@@ -107,23 +101,37 @@ class ChecklistActivity : AppCompatActivity() {
     }
 
     fun clearRows() {
-        itemlist.clear()
+        itemList.clear()
         (listView.adapter as ProductAdapter).notifyDataSetChanged()
+    }
+
+    fun sumAux(prices: ArrayList<Double>): Double {
+//        var sum: Double = 0.0
+//        var item = prices.size - 1
+//
+//        while (item >= 0) {
+//            val priceOfProduct = prices[item]
+//            sum += priceOfProduct
+//            item--
+//        }
+        return prices.sum()
     }
 
     fun calculatePriceToPay() {
         val position: SparseBooleanArray = listView.checkedItemPositions
         val count = listView.count
-        var sum: Double = 0.0
+
+        var pricesOfProducts: ArrayList<Double> = ArrayList<Double>()
 
         var item = count - 1
         while (item >= 0) {
             if (position.get(item)) {
-                val priceOfProduct = itemlist[item].price
-                sum += priceOfProduct
+                pricesOfProducts.add(itemList[item].price)
             }
             item--
         }
+
+        var sum = sumAux(pricesOfProducts)
 
         android.widget.Toast.makeText(
             this,
