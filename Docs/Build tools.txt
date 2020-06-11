@@ -1,0 +1,13 @@
+Build Tools
+
+Our project is made using Andorid Studio IDE that has a Gradle-based building tool
+When we want to build our project in an APK, so that we can give it to our users to install the application and use it,
+we go to 
+[SS1]
+and click Build APK
+Then, in the folder our project is in, it generates 2 files:
+[SS2]
+One of the file, "app-debug.apk", is the apk that will install our application, the other one, "output.json", is a message that tells
+us if the apk was generated succesfully or not
+
+We then transfer the APK to our mobile device and run it to install the application
