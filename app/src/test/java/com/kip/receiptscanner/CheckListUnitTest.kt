@@ -1,5 +1,7 @@
 package com.kip.receiptscanner
 
+import com.kip.receiptscanner.checklist.ChecklistActivity
+import kotlinx.android.synthetic.main.activity_checklist.*
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -9,9 +11,11 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class CheckListUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun sumProducts_isCorrect() {
+        val tested = ChecklistActivity()
+
+//        tested.
     }
 }
