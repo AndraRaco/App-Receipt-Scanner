@@ -58,15 +58,15 @@ class MainTextRecognizer : AppCompatActivity() {
                     v.isEnabled = true
                     processResultText(firebaseVisionText)
 
-                    var toCheckList: List<String?>//list to send to checklist activity
+                    var toCheckList: List<String?>  // list to send to checklist activity
                     toCheckList = ArrayList(50)
 
-                    var products : List<Pair<Double, String>>//auxiliary list to make tochecklist
+                    var products : List<Pair<Double, String>>  // auxiliary list to make tochecklist
                     products = processResultText(firebaseVisionText)
 
                     for(x in products)
                         toCheckList.add(x.first.toString() + ',' +x.second)
-                    //pass the products array to checklist for merging
+                    // pass the products array to checklist for merging
                     val Checklist = Intent(this, ChecklistActivity::class.java)
                     Checklist.putExtra("Products", toCheckList)
                     startActivity(Checklist)
@@ -106,12 +106,13 @@ class MainTextRecognizer : AppCompatActivity() {
         return products
     }
 
+    // returns a list of pairs (price, product_name), given the text of the receipt
     fun getTuples(text: String): List<Pair<Double, String>> {
         var products = mutableListOf<Pair<Double, String>>()
         var produs_crt = 0
         var pret_crt = 0
         var nume_crt = 0
-        var started = false
+        var started = false  // all the text from the upper part of the receipt is unnecessary and it should be skipped
         val lines = text.split("\n")
         for (line in lines) {
             if ("total" == line.toLowerCase(Locale.getDefault())
@@ -136,7 +137,7 @@ class MainTextRecognizer : AppCompatActivity() {
                             products[pret_crt] = Pair(nr, products[pret_crt].second)
                             pret_crt += 1
                         }
-                        started = true;
+                        started = true
                     }
                 }
             } else if (started
@@ -144,7 +145,7 @@ class MainTextRecognizer : AppCompatActivity() {
                 && "discount" !in line.toLowerCase(Locale.getDefault())
                 && "total" !in line.toLowerCase(Locale.getDefault())
                 && "lei" != line.toLowerCase(Locale.getDefault())
-                && "lel" != line.toLowerCase(Locale.getDefault())) {
+                && "lel" != line.toLowerCase(Locale.getDefault())) {  // the text recognizer might confuse i for l
 
                 if (nume_crt == produs_crt) {
                     products.add(Pair(0.toDouble(), line))
