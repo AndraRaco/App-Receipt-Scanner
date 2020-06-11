@@ -71,32 +71,36 @@ When the app is installed, the user will see the three pictures which presents t
    - **welcome_slider1.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Welcome - <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Ever felt tired of keeping track of the receipt? -
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Ever felt tired of keeping track of the receipt? - 
+    <br>
     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_slider1.png" width = "335" height="650">
     
     - **welcome_slider2.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - We got you - <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Just take a quick photo or chose one from your gallery -
+    <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_slider2.png" width = "335" height="650">
-     
+    
     - **welcome_slider3.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Sync - <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TextView - Remember to save your information over the cloud with a simple login -
+    <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_slider3.png" width = "335" height="650">
     
  - **Welcome Page design** - appears every time the app is opened
     - **activity_splash.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ProgressBar - <br>
+    <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/welcome_page.png" width = "335" height="650">
     
  - **Home Page design** - 
     - **app_bar_main_drawer.xml** <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Twp Buttons (Load Scanner and Open Checklist) - <br>
-    
+    <br>
     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/home_page.png" width = "335" height="650">
                        
 - **Navigation drawer**
@@ -104,7 +108,7 @@ When the app is installed, the user will see the three pictures which presents t
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- NavigationView implemented by Android  <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ImageView <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Two TextViews for username and passward <br>
-    
+    <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Navigation_drawer.png" width = "335" height="650">
 
 
