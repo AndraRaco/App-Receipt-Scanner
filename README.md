@@ -247,6 +247,103 @@ When the app is installed, the user will see the three pictures which presents t
     - type: AppCompatActivity
     - behaviour: adds items from userimput as a pair < name, price >, stores them in a list and calculates the total of the selected items
     
+ Functions used: 
+ 
+ -  Add function which functions by pressing Add button
+ 
+ ``` 
+   add.setOnClickListener {
+            addRow()
+        }
+ ```
+      
+  ```
+        fun addRow() {
+        val name = editText.text.toString()
+        val price = et_price.text.toString().toDouble()
+        val p = Product(name, price)
+        itemlist.add(p)
+        //listView.adapter =  adapter
+        (listView.adapter as ProductAdapter).notifyDataSetChanged()
+        // This is because every time when you add the item the input space or the edit text space will be cleared
+        editText.text.clear()
+        et_price.text.clear()
+    }
+ ```
+  
+  -  Clear function which functions by pressing Clear button
+  
+ 
+```  
+ clear.setOnClickListener {
+            clearRows()
+        }
+ ```
+ 
+ ```
+    fun clearRows() {
+        itemlist.clear()
+        (listView.adapter as ProductAdapter).notifyDataSetChanged()
+    }
+ ```
+ 
+ - Delete function which functions by pressing Delete button
+
+   
+```     
+    delete.setOnClickListener {
+         deleteRow()
+        }
+``` 
+
+```     fun deleteRow() {
+        val position: SparseBooleanArray = listView.checkedItemPositions
+        val count = listView.count
+        var item = count - 1
+        while (item >= 0) {
+            if (position.get(item)) {
+                itemlist.removeAt(item)
+            }
+            item--
+        }
+        position.clear()
+        (listView.adapter as ProductAdapter).notifyDataSetChanged()
+    }
+ ```
+      
+   -  Calculate sum function which functions by pressing Done button
+   
+ ``` 
+ calculate.setOnClickListener {
+            calculatePriceToPay()
+        }
+ ``` 
+ 
+```  fun calculatePriceToPay() {
+        val position: SparseBooleanArray = listView.checkedItemPositions
+        val count = listView.count
+        var sum: Double = 0.0
+
+        var item = count - 1
+        while (item >= 0) {
+            if (position.get(item)) {
+                val priceOfProduct = itemlist[item].price
+                sum += priceOfProduct
+            }
+            item--
+        }
+
+        android.widget.Toast.makeText(
+            this,
+            "You have to pay $sum",
+            android.widget.Toast.LENGTH_SHORT
+        ).show()
+    }
+ ```
+      
+ These functions can be found in ChecklistActivity.kt file.   
+  
+    
 ## Build tools
 Our project is developed using Andorid Studio IDE that has a Gradle-based building tool. When we want to build our project in an APK, so that we can give it to our users to install the application and use it, we go to:
 ![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/build_tools1.jpeg)
