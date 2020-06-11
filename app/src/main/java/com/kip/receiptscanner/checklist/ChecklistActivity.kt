@@ -64,6 +64,20 @@ class ChecklistActivity : AppCompatActivity() {
             calculatePriceToPay()
         }
 
+        // Get an string array containing ("price" + "," + "name") for each product in scanner
+        val products = intent.getStringArrayListExtra("Products")
+
+        if (products != null) {
+            for (x in products) {
+                val parts = x.split(',').toTypedArray()//parse to get the products
+                val price = parts[0].toDouble()
+                val name = parts[1]
+                val p = Product(name, price)
+                itemlist.add(p)
+            }
+        }
+
+
     }
 
     fun addRow() {
