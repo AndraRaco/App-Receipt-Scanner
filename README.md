@@ -120,6 +120,49 @@ When the app is installed, the user will see the three pictures which presents t
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Twp Buttons (Select image - takes the user to the gallery in order to select an                  image and Recognise Text - scans the image that was selected) - <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- EditText (here will appear the text - names and prices of the products-) <br>
     
+    **Chose an image option**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/chose_img.PNG" width = "335" height="650">
+     
+     **After the image was chosen**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/chose_img.PNG" width = "335" height="650">
+     
+     **Chose an image option**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/img_chosen.PNG" width = "335" height="650">
+     
+     **Text recognition function**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Text_recognition.jpeg" width = "335" height="650">
+     
+     **Transform image into checklist**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/transformed_into_checklist.PNG" width = "335" height="650">
+     
+     **Select an item using the checkbox**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/selected_item.PNG" width = "335" height="650">
+     
+     **Calculating the total sum by pressing Done**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/pressed_done.PNG" width = "335" height="650">
+     
+     **Deleting an item by pressing Delete**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/pressed_delete.PNG" width = "335" height="650">
+     
+     **Adding an item**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/adding_item.PNG" width = "335" height="650">
+     
+     **Item added**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/item_added.PNG" width = "335" height="650">
+    
+    **Clearing the list by pressing Clear**
+     <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/pressed_clear.PNG" width = "335" height="650">
 
 - **Checklist** - activity_checklist.xml - a relative Layout which contains:
    - **TextView** - title of the page - Receipt List
