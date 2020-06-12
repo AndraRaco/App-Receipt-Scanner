@@ -228,6 +228,9 @@ When the app is installed, the user will see the three pictures which presents t
         })
         
   ```
+  
+     These functions can be found in **Slider.kt** file.   
+
 
 - HomeFragment
     - info: part of the main activity, the app's homepage, with two buttons to load the checklist and scan activities
@@ -264,6 +267,9 @@ When the app is installed, the user will see the three pictures which presents t
                         startActivity(intent)
                     }
                  ```
+                 
+     These functions can be found in **GallertActivity.kt** file.   
+
 - GalleryActivity
     - info: the app activity that extracts an image from the gallery or from a google drive account
     - type: AppCompatActivity
@@ -310,6 +316,36 @@ When the app is installed, the user will see the three pictures which presents t
 
  -  Select an image
  
+ ```
+     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        //BUTTON CLICK
+        img_pick_btn.setOnClickListener {
+            //check runtime permission
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                    //permission denied
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+                    //show popup to request runtime permission
+                    requestPermissions(permissions, PERMISSION_CODE);
+                } else {
+                    //permission already granted
+                    pickImageFromGallery();
+                }
+            } else {
+                //system OS is < Marshmallow
+                pickImageFromGallery();
+            }
+        }
+    }
+    
+ ```
+
+   These functions can be found in **GallertActivity.kt** file.   
+
+ 
 - MainTextRecognizer
     - info: the app activity that scans a given image
     - type: AppCompatActivity
@@ -329,7 +365,7 @@ Functions used:
 
 - Scanning the text
 ```
-fun startRecognizing(v: View) {
+ fun startRecognizing(v: View) {
         if (imageView.drawable != null) {
             editText.setText("")
             v.isEnabled = false
@@ -342,15 +378,15 @@ fun startRecognizing(v: View) {
                     v.isEnabled = true
                     processResultText(firebaseVisionText)
 
-                    var toCheckList: List<String?>//list to send to checklist activity
+                    var toCheckList: List<String?>  // list to send to checklist activity
                     toCheckList = ArrayList(50)
 
-                    var products : List<Pair<Double, String>>//auxiliary list to make tochecklist
+                    var products: List<Pair<Double, String>>  // auxiliary list to make tochecklist
                     products = processResultText(firebaseVisionText)
 
-                    for(x in products)
-                        toCheckList.add(x.first.toString() + ',' +x.second)
-                    //pass the products array to checklist for merging
+                    for (x in products)
+                        toCheckList.add(x.first.toString() + ',' + x.second)
+                    // pass the products array to checklist for merging
                     val Checklist = Intent(this, ChecklistActivity::class.java)
                     Checklist.putExtra("Products", toCheckList)
                     startActivity(Checklist)
@@ -364,15 +400,16 @@ fun startRecognizing(v: View) {
             Toast.makeText(this, "Select an Image First", Toast.LENGTH_LONG).show()
         }
     }
+
 ```
 Other functions:
 
 - Function for Processing the text 
 
 ```
-    private fun processResultText(resultText: FirebaseVisionText) : List<Pair<Double, String>>  {
+    private fun processResultText(resultText: FirebaseVisionText): List<Pair<Double, String>> {
 
-        var products : List<Pair<Double, String>>
+        var products: List<Pair<Double, String>>
         products = ArrayList(50)
 
         if (resultText.textBlocks.size == 0) {
@@ -397,16 +434,19 @@ Other functions:
 - Function for extracting the price and name of the products
 
 ```
+  // returns a list of pairs (price, product_name), given the text of the receipt
     fun getTuples(text: String): List<Pair<Double, String>> {
-     var products = mutableListOf<Pair<Double, String>>()
+        var products = mutableListOf<Pair<Double, String>>()
         var produs_crt = 0
         var pret_crt = 0
         var nume_crt = 0
-        var started = false
+        var started =
+            false  // all the text from the upper part of the receipt is unnecessary and it should be skipped
         val lines = text.split("\n")
         for (line in lines) {
             if ("total" == line.toLowerCase(Locale.getDefault())
-                || "*" in line.toLowerCase(Locale.getDefault())) {
+                || "*" in line.toLowerCase(Locale.getDefault())
+            ) {
                 break
             }
 
@@ -427,7 +467,7 @@ Other functions:
                             products[pret_crt] = Pair(nr, products[pret_crt].second)
                             pret_crt += 1
                         }
-                        started = true;
+                        started = true
                     }
                 }
             } else if (started
@@ -435,7 +475,8 @@ Other functions:
                 && "discount" !in line.toLowerCase(Locale.getDefault())
                 && "total" !in line.toLowerCase(Locale.getDefault())
                 && "lei" != line.toLowerCase(Locale.getDefault())
-                && "lel" != line.toLowerCase(Locale.getDefault())) {
+                && "lel" != line.toLowerCase(Locale.getDefault())
+            ) {  // the text recognizer might confuse i for l
 
                 if (nume_crt == produs_crt) {
                     products.add(Pair(0.toDouble(), line))
@@ -451,7 +492,7 @@ Other functions:
     }
     
 ```
-   These functions can be found in MainTextRecogniser.kt file.   
+   These functions can be found in **MainTextRecogniser.kt** file.   
 
 - ChecklistActivity
     - info: app activity that creates a checklist for easy recipie management
@@ -584,7 +625,7 @@ Other functions:
     }
  ```
       
- These functions can be found in ChecklistActivity.kt file.   
+ These functions can be found in **ChecklistActivity.kt** file.   
   
     
 ## Build tools
