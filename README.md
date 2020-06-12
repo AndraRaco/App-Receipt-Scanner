@@ -126,10 +126,6 @@ When the app is installed, the user will see the three pictures which presents t
      
      **After the image was chosen**
      <br>
-     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/chose_img.PNG" width = "335" height="650">
-     
-     **Chose an image option**
-     <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/img_chosen.PNG" width = "335" height="650">
      
      **Text recognition function**
