@@ -126,6 +126,10 @@ When the app is installed, the user will see the three pictures which presents t
      
      **After the image was chosen**
      <br>
+     <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/chose_img.PNG" width = "335" height="650">
+     
+     **Chose an image option**
+     <br>
      <img src = "https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/img_chosen.PNG" width = "335" height="650">
      
      **Text recognition function**
@@ -459,20 +463,28 @@ Other functions:
  -  Add function which functions by pressing Add button
  
  ``` 
+    // Adding the items to the list when the add button is pressed
    add.setOnClickListener {
             addRow()
         }
  ```
       
   ```
-        fun addRow() {
+    // Adding a new row to the CheckList
+    fun addRow() {
+        // Create product with name and prace
         val name = editText.text.toString()
         val price = et_price.text.toString().toDouble()
         val p = Product(name, price)
-        itemlist.add(p)
-        //listView.adapter =  adapter
+
+        // Add product to the list of Products
+        itemList.add(p)
+
+        // Notify the attached observers that the underlying data has been changed and
+        // the listView should refresh itself
         (listView.adapter as ProductAdapter).notifyDataSetChanged()
-        // This is because every time when you add the item the input space or the edit text space will be cleared
+
+        // After adding the item, the edit texts for name and for price will be cleared
         editText.text.clear()
         et_price.text.clear()
     }
@@ -482,14 +494,19 @@ Other functions:
   
  
 ```  
- clear.setOnClickListener {
+    // Delete the all rows form the listView
+    clear.setOnClickListener {
             clearRows()
         }
  ```
  
  ```
+    // Delete the all rows form the listView
     fun clearRows() {
-        itemlist.clear()
+        itemList.clear()
+
+        // Notify the attached observers that the underlying data has been changed and
+        // the listView should refresh itself
         (listView.adapter as ProductAdapter).notifyDataSetChanged()
     }
  ```
@@ -497,23 +514,33 @@ Other functions:
  - Delete function which functions by pressing Delete button
 
    
-```     
+``` 
+    // Selecting and Deleting the items from the list when the delete button is pressed    
     delete.setOnClickListener {
          deleteRow()
         }
 ``` 
 
-```     fun deleteRow() {
-        val position: SparseBooleanArray = listView.checkedItemPositions
-        val count = listView.count
-        var item = count - 1
+```     
+    // Delete the selected rows form the listView
+    fun deleteRow() {
+        val position: SparseBooleanArray =
+            listView.checkedItemPositions // Map with indices of the items from listView
+        // and true/false if the item is checked/ is not checked
+        val count = listView.count // size of the listView
+        var item = count - 1 // index for the list
+
+        // Removing the selected items
         while (item >= 0) {
             if (position.get(item)) {
-                itemlist.removeAt(item)
+                itemList.removeAt(item)
             }
             item--
         }
         position.clear()
+
+        // Notify the attached observers that the underlying data has been changed and
+        // the listView should refresh itself
         (listView.adapter as ProductAdapter).notifyDataSetChanged()
     }
  ```
@@ -521,30 +548,39 @@ Other functions:
    -  Calculate sum function which functions by pressing Done button
    
  ``` 
- calculate.setOnClickListener {
-            calculatePriceToPay()
+        // Calculate how much has the person to pay
+        calculate.setOnClickListener {
+            var sum = calculatePriceToPay()
+            // Show a text with the sum
+            android.widget.Toast.makeText(
+                this,
+                "You have to pay $sum",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
         }
  ``` 
  
-```  fun calculatePriceToPay() {
-        val position: SparseBooleanArray = listView.checkedItemPositions
-        val count = listView.count
-        var sum: Double = 0.0
+```  
+    // Calculate how much the user has to pay
+    fun calculatePriceToPay(): Double {
+        val position: SparseBooleanArray =
+            listView.checkedItemPositions // Map with indices of the items from listView
+        // and true/false if the item is checked/ is not checked
+        val count = listView.count // Size of the listView
 
+        var pricesOfProducts: ArrayList<Double> = ArrayList<Double>()
+
+        // Select the products that are checked
         var item = count - 1
         while (item >= 0) {
             if (position.get(item)) {
-                val priceOfProduct = itemlist[item].price
-                sum += priceOfProduct
+                pricesOfProducts.add(itemList[item].price)
             }
             item--
         }
 
-        android.widget.Toast.makeText(
-            this,
-            "You have to pay $sum",
-            android.widget.Toast.LENGTH_SHORT
-        ).show()
+        // Calculate the sum of the selected products
+        return sumAux(pricesOfProducts)
     }
  ```
       
