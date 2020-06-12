@@ -126,4 +126,35 @@ class CheckListAndroidTest {
             0.0, sizeAfterClear.toDouble(), 0.0
         )
     }
+
+    @Test
+    fun user_calculate_correct() {
+        // Add 2 products to the CheckList
+        // Write product information in typeTexts
+        onView(withId(R.id.editText)).perform(typeText("mere"))
+        onView(withId(R.id.et_price)).perform(typeText("4.5"))
+        // Click on add button
+        onView(withId(R.id.add)).perform(click())
+        // Write product information in typeTexts
+        onView(withId(R.id.editText)).perform(typeText("pere"))
+        onView(withId(R.id.et_price)).perform(typeText("5.0"))
+        // Click on add button
+        onView(withId(R.id.add)).perform(click())
+
+        // Select "mere" from list
+        onView(withText("mere")).perform(click())
+        // Select "pere" from list
+        onView(withText("pere")).perform(click())
+
+        var correctSum: Double = 4.5 + 5.0
+
+        // How much has the user to pay for selected items
+        var sum = rule.activity.calculatePriceToPay()
+
+        // Check if the product was added, the size after add should be equal with the initial size + one
+        Assert.assertEquals(
+            "The sum is wrong",
+            correctSum, sum, 0.0
+        )
+    }
 }

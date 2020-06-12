@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.kip.receiptscanner.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_HomeFragment_to_HomeSecondFragment"

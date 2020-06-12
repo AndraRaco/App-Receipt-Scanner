@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -60,11 +59,11 @@ class MainTextRecognizer : AppCompatActivity() {
                     var toCheckList: List<String?>  // list to send to checklist activity
                     toCheckList = ArrayList(50)
 
-                    var products : List<Pair<Double, String>>  // auxiliary list to make tochecklist
+                    var products: List<Pair<Double, String>>  // auxiliary list to make tochecklist
                     products = processResultText(firebaseVisionText)
 
-                    for(x in products)
-                        toCheckList.add(x.first.toString() + ',' +x.second)
+                    for (x in products)
+                        toCheckList.add(x.first.toString() + ',' + x.second)
                     // pass the products array to checklist for merging
                     val Checklist = Intent(this, ChecklistActivity::class.java)
                     Checklist.putExtra("Products", toCheckList)
@@ -81,9 +80,9 @@ class MainTextRecognizer : AppCompatActivity() {
     }
 
 
-    private fun processResultText(resultText: FirebaseVisionText) : List<Pair<Double, String>> {
+    private fun processResultText(resultText: FirebaseVisionText): List<Pair<Double, String>> {
 
-        var products : List<Pair<Double, String>>
+        var products: List<Pair<Double, String>>
         products = ArrayList(50)
 
         if (resultText.textBlocks.size == 0) {
@@ -111,11 +110,13 @@ class MainTextRecognizer : AppCompatActivity() {
         var produs_crt = 0
         var pret_crt = 0
         var nume_crt = 0
-        var started = false  // all the text from the upper part of the receipt is unnecessary and it should be skipped
+        var started =
+            false  // all the text from the upper part of the receipt is unnecessary and it should be skipped
         val lines = text.split("\n")
         for (line in lines) {
             if ("total" == line.toLowerCase(Locale.getDefault())
-                || "*" in line.toLowerCase(Locale.getDefault())) {
+                || "*" in line.toLowerCase(Locale.getDefault())
+            ) {
                 break
             }
 
@@ -144,7 +145,8 @@ class MainTextRecognizer : AppCompatActivity() {
                 && "discount" !in line.toLowerCase(Locale.getDefault())
                 && "total" !in line.toLowerCase(Locale.getDefault())
                 && "lei" != line.toLowerCase(Locale.getDefault())
-                && "lel" != line.toLowerCase(Locale.getDefault())) {  // the text recognizer might confuse i for l
+                && "lel" != line.toLowerCase(Locale.getDefault())
+            ) {  // the text recognizer might confuse i for l
 
                 if (nume_crt == produs_crt) {
                     products.add(Pair(0.toDouble(), line))

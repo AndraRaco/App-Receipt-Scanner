@@ -4,19 +4,17 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.kip.receiptscanner.Product
 import com.kip.receiptscanner.R
-import kotlinx.android.synthetic.main.list_products.view.*
 
-class ProductAdapter(private val context: Context, private val products: ArrayList<Product>): BaseAdapter() {
+class ProductAdapter(private val context: Context, private val products: ArrayList<Product>) :
+    BaseAdapter() {
     // Creates a view to be used as a row in the list
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val layoutInflater = LayoutInflater.from(context)
-        val rowMain = layoutInflater.inflate(R.layout.list_products,parent, false)
+        val rowMain = layoutInflater.inflate(R.layout.list_products, parent, false)
 
         // Add the name of the product to the row
         val tvName = rowMain.findViewById<TextView>(R.id.tv_name)

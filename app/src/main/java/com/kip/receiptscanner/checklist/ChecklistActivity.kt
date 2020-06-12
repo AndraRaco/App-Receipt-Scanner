@@ -52,7 +52,13 @@ class ChecklistActivity : AppCompatActivity() {
 
         // Calculate how much has the person to pay
         calculate.setOnClickListener {
-            calculatePriceToPay()
+            var sum = calculatePriceToPay()
+            // Show a text with the sum
+            android.widget.Toast.makeText(
+                this,
+                "You have to pay $sum",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
         }
 
         // Get an string array containing ("price" + "," + "name") for each product in scanner
@@ -94,7 +100,8 @@ class ChecklistActivity : AppCompatActivity() {
 
     // Delete the selected rows form the listView
     fun deleteRow() {
-        val position: SparseBooleanArray = listView.checkedItemPositions // Map with indices of the items from listView
+        val position: SparseBooleanArray =
+            listView.checkedItemPositions // Map with indices of the items from listView
         // and true/false if the item is checked/ is not checked
         val count = listView.count // size of the listView
         var item = count - 1 // index for the list
@@ -128,8 +135,9 @@ class ChecklistActivity : AppCompatActivity() {
     }
 
     // Calculate how much the user has to pay
-    fun calculatePriceToPay(){
-        val position: SparseBooleanArray = listView.checkedItemPositions // Map with indices of the items from listView
+    fun calculatePriceToPay(): Double {
+        val position: SparseBooleanArray =
+            listView.checkedItemPositions // Map with indices of the items from listView
         // and true/false if the item is checked/ is not checked
         val count = listView.count // Size of the listView
 
@@ -145,14 +153,7 @@ class ChecklistActivity : AppCompatActivity() {
         }
 
         // Calculate the sum of the selected products
-        var sum = sumAux(pricesOfProducts)
-
-        // Show a text with the sum
-        android.widget.Toast.makeText(
-            this,
-            "You have to pay $sum",
-            android.widget.Toast.LENGTH_SHORT
-        ).show()
+        return sumAux(pricesOfProducts)
     }
 
     // Size of the itemList

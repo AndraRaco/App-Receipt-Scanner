@@ -47,6 +47,7 @@ class GalleryActivity : AppCompatActivity() {
     companion object {
         //image pick code
         private val IMAGE_PICK_CODE = 1000;
+
         //Permission code
         private val PERMISSION_CODE = 1001;
     }
