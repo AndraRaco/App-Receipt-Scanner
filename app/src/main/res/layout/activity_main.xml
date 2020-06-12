@@ -13,7 +13,7 @@
         android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/receipts"
-        tools:srcCompat="@drawable/receipt" />
+        tools:srcCompat="@drawable/receipts" />
 
     <LinearLayout
         android:id="@+id/actionContainer"
