@@ -174,7 +174,7 @@ When the app is installed, the user will see the three pictures which presents t
    
 ### 7. UML Use Case Diagram  
 
-![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/UML_use_case.png)
+![](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/UML%20use%20case.png?fbclid=IwAR2RU3ZZUDRKNkaLkJyR98yvLv2ZcX49h8cG-xaDGx7rBnys0_y0By53z1c)
    
 
 ## Source control
