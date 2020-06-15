@@ -642,7 +642,7 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
 
 ### Describing the code used for Unit Testing
 
-1. Test if the product ("mere", 4.5) can be added
+**1. Test if the product ("mere", 4.5) can be added**
 ```
 @Test
     fun user_add_product_correct() {
@@ -667,7 +667,7 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
     }
 ```
 
-2. Test if the product ("mere", "ciocolata") can be added
+**2. Test if the product ("mere", "ciocolata") can be added**
 ```
 @Test
     fun user_add_product_wrong() {
@@ -691,7 +691,7 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
     }
 ```
 
-3. Test if the user can delete product from the CheckList
+**3. Test if the user can delete product from the CheckList**
 ```
 @Test
     fun user_add_and_delete_product_correct() {
@@ -727,7 +727,7 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
     }
 ```
 
-4. Test if the user can clear the CheckLsit
+**4. Test if the user can clear the CheckLsit**
 ```
 @Test
     fun user_add_and_clear_product_correct() {
@@ -757,7 +757,8 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
     }
 ```
 
-5. Test if the sum of the selected items is calculated correctly 
+**5. Test if the sum of the selected items is calculated correctly **
+
 ```
 @Test
     fun user_calculate_correct() {
@@ -790,7 +791,8 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
         )
     }
 ```
-Unit Testing Results:
+**Unit Testing Results:**
+<br>
 
 ![Unit Testing Results](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Unit%20Testing.jpeg)
 
