@@ -757,7 +757,7 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
     }
 ```
 
-**5. Test if the sum of the selected items is calculated correctly **
+**5. Test if the sum of the selected items is calculated correctly**
 
 ```
 @Test
