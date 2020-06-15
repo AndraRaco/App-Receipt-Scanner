@@ -642,6 +642,9 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
 
 ### Describing the code used for Unit Testing
 
+## [Tests demo](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/tests_demo.mp4)
+
+
 **1. Test if the product ("mere", 4.5) can be added**
 ```
 @Test
