@@ -637,7 +637,7 @@ and click Build APK. Then, in the folder our project is in, it generates 2 files
 
 One of the file, "app-debug.apk", is the apk that will install our application, the other one, "output.json", is a message that tells us if the apk was generated succesfully or not. We then transfer the APK to our mobile device and run it to install the application.
 
-## Protocoale de teste- structurate pe cap care sa corespunda descrierii anterioare, protocoale de testare care se ref la testele efectuate si la rezultatele lor
+## Testing protocols and their results
 
 ### Describing the code used for Unit Testing
 
@@ -797,5 +797,3 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
 <br>
 
 ![Unit Testing Results](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Unit%20Testing.jpeg)
-
-## Fisa de interventie care se ref la protocoalele de testare si la masurile luate
