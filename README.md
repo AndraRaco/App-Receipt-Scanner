@@ -791,6 +791,7 @@ One of the file, "app-debug.apk", is the apk that will install our application, 
     }
 ```
 Unit Testing Results:
+
 ![Unit Testing Results](https://github.com/AndraRaco/App-Receipt-Scanner/blob/master/Docs/Unit%20Testing.jpeg)
 
 ## Fisa de interventie care se ref la protocoalele de testare si la masurile luate
