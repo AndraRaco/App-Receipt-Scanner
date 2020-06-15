@@ -44,8 +44,7 @@ We monitorized our backlog creation using Trello. It can be found [here](https:/
 
 - Scanning a receipt and extracting the product's name and price
 - Creating a checklist from scratch
-- Taking a photo of the receipt
-- Chosing a photo from the gallery
+- Chosing a photo from the gallery/ from Drive
 - Creating a checklist based on the scan
 - Editing a checklist
 - Calculating the total sum that a individual has to pay based on his selection from the checklist
